@@ -1,21 +1,28 @@
+@import url("../base.css");
 * {
   margin: 0;
   padding: 0;
 }
 
+body {
+  background-color: #FCFAFB;
+}
+
 nav.top_nav {
+  z-index: 10;
   left: 0;
   top: 0;
   position: fixed;
   width: 100%;
-  height: 3.5rem;
-  background: rgba(139, 116, 105, 0.3);
+  background: #DDD6D2;
+  transition: height 1s ease-in-out;
+  overflow: hidden;
 }
 nav.top_nav ul {
-  display: flex;
   width: 100%;
   height: 100%;
   list-style-type: none;
+  overflow: hidden;
 }
 nav.top_nav ul li {
   display: flex;
@@ -28,17 +35,487 @@ nav.top_nav ul li a {
   align-items: center;
   height: 100%;
   padding: 0 15px;
+  padding-top: 0.5rem;
   cursor: pointer;
   text-decoration: none;
 }
 nav.top_nav ul li a span {
   color: #30341C;
-  font-family: Anticva, sans-serif;
-  font-size: 0.875rem;
+  font-family: Anticva, serif;
+  font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+}
+nav.top_nav button.nav_btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+nav.top_nav button.nav_btn div span {
+  display: block;
+  transition: all 0.5s ease;
+  background-color: #8B7469;
+}
+
+nav.top_nav.active {
+  height: 100%;
+}
+nav.top_nav.active ul {
+  top: 50%;
+}
+
+@media only screen and (max-width: 595px) {
+  nav.top_nav {
+    height: 1.25rem;
+  }
+  nav.top_nav ul {
+    position: absolute;
+    transition: top 1s ease-in-out;
+    top: -10rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    height: 10rem;
+  }
+  nav.top_nav ul li {
+    height: 2rem;
+  }
+  nav.top_nav ul li a span {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  nav.top_nav button.nav_btn {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.25rem;
+    margin-top: 0.13rem;
+  }
+  nav.top_nav button.nav_btn div span {
+    width: 5px;
+    height: 1px;
+    opacity: 1;
+    transform-origin: bottom;
+  }
+  nav.top_nav button.nav_btn div span:nth-child(1),
+  nav.top_nav button.nav_btn div span:nth-child(2) {
+    margin-bottom: 1px;
+  }
+  nav.top_nav.active button.nav_btn span:first-child {
+    transform: rotate(45deg) translate(1px, 1px);
+    width: 10px;
+    margin: 0;
+  }
+  nav.top_nav.active button.nav_btn span:nth-child(2) {
+    opacity: 0;
+  }
+  nav.top_nav.active button.nav_btn span:last-child {
+    transform: rotate(-45deg) translate(1px, -1px);
+    width: 10px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 596px) {
+  nav.top_nav {
+    height: 2.5rem;
+  }
+  nav.top_nav ul {
+    position: absolute;
+    transition: top 1s ease-in-out;
+    top: -17.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    height: 17.5rem;
+  }
+  nav.top_nav ul li {
+    height: 3.5rem;
+  }
+  nav.top_nav ul li a span {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  nav.top_nav button.nav_btn {
+    height: 1.875rem;
+    width: 1.875rem;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+  }
+  nav.top_nav button.nav_btn div span {
+    width: 8px;
+    height: 2px;
+  }
+  nav.top_nav button.nav_btn div span:nth-child(1),
+  nav.top_nav button.nav_btn div span:nth-child(2) {
+    margin-bottom: 2px;
+  }
+  nav.top_nav.active button.nav_btn span:first-child {
+    transform: rotate(45deg) translate(1.75px, 2px);
+    width: 20px;
+    margin: 0;
+  }
+  nav.top_nav.active button.nav_btn span:nth-child(2) {
+    opacity: 0;
+  }
+  nav.top_nav.active button.nav_btn span:last-child {
+    transform: rotate(-45deg) translate(1.75px, -2px);
+    width: 20px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  nav.top_nav {
+    height: 3.5rem;
+    transition: none;
+  }
+  nav.top_nav ul {
+    display: flex;
+    top: 0;
+    left: 0;
+    transform: none;
+    transition: none;
+    height: 100%;
+  }
+  nav.top_nav ul li {
+    height: 100%;
+  }
+  nav.top_nav ul li a span {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  nav.top_nav button.nav_btn {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  nav.top_nav {
+    height: 5.5rem;
+  }
+  nav.top_nav ul {
+    display: flex;
+  }
+  nav.top_nav ul li a span {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+header {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+header img.bg_l {
+  position: absolute;
+  left: 1.5%;
+  top: 4%;
+  height: 70%;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+header img.bg_r {
+  position: absolute;
+  right: 1.5%;
+  top: 4%;
+  height: 70%;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+header div.wrapper {
+  z-index: 2;
+}
+header div.wrapper h2 {
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.9;
+}
+header div.wrapper div.balance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header div.wrapper div.balance h1 {
+  text-transform: uppercase;
+}
+header div.wrapper div.line {
+  display: flex;
+  justify-content: center;
+}
+header div.wrapper h3 {
+  opacity: 0.7;
+  text-align: center;
+}
+header div.wrapper div.btn_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header div.wrapper div.btn_wrap button {
+  background-color: #FCFAFB;
+  border: 0.8px solid #30341C;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 595px) {
+  header {
+    margin-top: 1.25rem;
+    height: 15rem;
+  }
+  header div.wrapper h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  header div.wrapper div.balance {
+    margin-top: 0.5rem;
+  }
+  header div.wrapper div.balance img {
+    margin-right: 0.1rem;
+    height: 2rem;
+    width: 1.5rem;
+  }
+  header div.wrapper div.balance h1 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1375rem;
+  }
+  header div.wrapper div.line svg {
+    width: 11rem;
+  }
+  header div.wrapper h3 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 11rem;
+  }
+  header div.wrapper div.btn_wrap button {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 0.32rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 596px) {
+  header {
+    margin-top: 2.5rem;
+    height: 20rem;
+  }
+  header div.wrapper h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  header div.wrapper div.balance {
+    margin-top: 0.5rem;
+  }
+  header div.wrapper div.balance img {
+    margin-right: 0.3rem;
+    height: 4rem;
+    width: 3rem;
+  }
+  header div.wrapper div.balance h1 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1375rem;
+  }
+  header div.wrapper div.line svg {
+    width: 21rem;
+  }
+  header div.wrapper h3 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.6rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    max-width: 30rem;
+  }
+  header div.wrapper div.btn_wrap button {
+    width: 6rem;
+    height: 6rem;
+    margin-top: 0.6rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  header {
+    margin-top: 3.5rem;
+    height: 30rem;
+  }
+  header div.wrapper h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  header div.wrapper div.balance {
+    margin-top: 1rem;
+  }
+  header div.wrapper div.balance img {
+    margin-right: 1.2rem;
+    height: 5.6rem;
+    width: 4.5rem;
+  }
+  header div.wrapper div.balance h1 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1375rem;
+  }
+  header div.wrapper div.line svg {
+    width: 32rem;
+  }
+  header div.wrapper h3 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.6rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    max-width: 50rem;
+  }
+  header div.wrapper div.btn_wrap button {
+    width: 9rem;
+    height: 9rem;
+    margin-top: 1.2rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  header {
+    margin-top: 5.5rem;
+    height: 60rem;
+  }
+  header div.wrapper h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  header div.wrapper div.balance {
+    margin-top: 1.5rem;
+  }
+  header div.wrapper div.balance img {
+    margin-right: 2rem;
+    height: 9rem;
+    width: 7rem;
+  }
+  header div.wrapper div.balance h1 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.7rem;
+  }
+  header div.wrapper div.line svg {
+    width: 56rem;
+  }
+  header div.wrapper h3 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1rem;
+    max-width: 80rem;
+  }
+  header div.wrapper div.btn_wrap button {
+    width: 15rem;
+    height: 15rem;
+    margin-top: 2rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

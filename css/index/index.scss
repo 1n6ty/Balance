@@ -1,27 +1,56 @@
+@import url('../base.css');
+
+@mixin Anticva-text($font-size){
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: $font-size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@mixin Norms-text($font-size){
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: $font-size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
+body {
+    background-color: #FCFAFB;
+}
+
 // top navigation
 
 nav.top_nav {
+    z-index: 10;
+
     left: 0;
     top: 0;
     position: fixed;
 
     width: 100%;
-    height: 3.5rem;
 
-    background: rgba(139, 116, 105, 0.3);
+    background: #DDD6D2;
+
+    transition: height 1s ease-in-out;
+
+    overflow: hidden;
 
     ul {
-        display: flex;
-
         width: 100%;
         height: 100%;
 
         list-style-type: none;
+
+        overflow: hidden;
 
         li {
             display: flex;
@@ -37,19 +66,556 @@ nav.top_nav {
                 height: 100%;
 
                 padding: 0 15px;
+                padding-top: 0.5rem;
 
                 cursor: pointer;
 
                 text-decoration: none;
 
                 span {
-                    color: #30341C;
-                    font-family: Anticva, sans-serif;
-                    font-size: 0.875rem;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: normal;
+                    @include Anticva-text($font-size: 1.4rem);
                     text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    button.nav_btn {
+        position: absolute;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        top: 0;
+        right: 0;
+
+        background-color: white;
+        border: 0;
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        div {
+            span {
+                display: block;
+                transition: all .5s ease;
+                background-color: #8B7469;
+            }
+        }
+    }
+}
+
+nav.top_nav.active {
+    height: 100%;
+
+    ul {      
+        top: 50%;
+    }
+}
+
+@media only screen and (max-width: 595px){
+    nav.top_nav {
+        height: 1.25rem;
+
+        ul {
+            position: absolute;
+
+            transition: top 1s ease-in-out;
+
+            top: -10rem;
+            left: 50%;
+
+            transform: translateX(-50%) translateY(-50%);
+
+            display: block;
+            height: 10rem;
+
+            
+            li {
+                height: 2rem;
+                a {
+                    span {
+                        @include Anticva-text($font-size: 0.5rem);
+                    }
+                }
+            }
+        }
+
+        button.nav_btn {
+            height: 1rem;
+            width: 1rem;
+    
+            margin-right: 0.25rem;
+            margin-top: 0.13rem;
+
+            div {
+                span {
+                    width: 5px;
+                    height: 1px;
+
+                    opacity: 1;
+
+                    transform-origin: bottom;
+                }
+        
+                span:nth-child(1),
+                span:nth-child(2) {
+                    margin-bottom: 1px;
+                }
+            }
+        }
+    }
+
+    nav.top_nav.active {
+        button.nav_btn {
+            span:first-child {
+                transform: rotate(45deg) translate(1px, 1px);
+                width: 10px;
+                margin: 0;
+            }
+            span:nth-child(2) {
+                opacity: 0;
+            }
+            span:last-child {
+                transform: rotate(-45deg) translate(1px, -1px);
+                width: 10px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 596px){
+    nav.top_nav {
+        height: 2.5rem;
+
+        ul{
+            position: absolute;
+
+            transition: top 1s ease-in-out;
+
+            top: -17.5rem;
+            left: 50%;
+
+            transform: translateX(-50%) translateY(-50%);
+
+            display: block;
+            height: 17.5rem;
+
+            li {
+                height: 3.5rem;
+                a {
+                    span {
+                        @include Anticva-text($font-size: 0.875rem);
+                    }
+                }
+            }
+        }
+
+        button.nav_btn {
+            height: 1.875rem;
+            width: 1.875rem;
+    
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+
+            div {
+                span {
+                    width: 8px;
+                    height: 2px;
+                }
+        
+                span:nth-child(1),
+                span:nth-child(2) {
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+
+    nav.top_nav.active {
+        button.nav_btn {
+            span:first-child {
+                transform: rotate(45deg) translate(1.75px, 2px);
+                width: 20px;
+                margin: 0;
+            }
+            span:nth-child(2) {
+                opacity: 0;
+            }
+            span:last-child {
+                transform: rotate(-45deg) translate(1.75px, -2px);
+                width: 20px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1020px){
+    nav.top_nav {
+        height: 3.5rem;
+
+        transition: none;
+
+        ul{
+            display: flex;
+
+            top: 0;
+            left: 0;
+
+            transform: none;
+
+            transition: none;
+
+            height: 100%;
+
+            li {
+                height: 100%;
+                
+                a {
+                    span {
+                        @include Anticva-text($font-size: 0.875rem);
+                    }
+                }
+            }
+        }
+
+        button.nav_btn {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 1600px){
+    nav.top_nav {
+        height: 5.5rem;
+
+        ul{
+            display: flex;
+
+            li {
+                a {
+                    span {
+                        @include Anticva-text($font-size: 1.4rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// header
+
+header {
+    z-index: 1;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    img.bg_l {
+        position: absolute;
+
+        left: 1.5%;
+        top: 4%;
+
+        height: 70%;
+
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    img.bg_r {
+        position: absolute;
+
+        right: 1.5%;
+        top: 4%;
+
+        height: 70%;
+
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    div.wrapper {
+
+        z-index: 2;
+
+        h2 {
+            text-transform: uppercase;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        div.balance {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                text-transform: uppercase;
+            }
+        }
+
+        div.line{
+            display: flex;
+            justify-content: center;
+        }
+
+        h3 {
+            opacity: 0.7;
+
+            text-align: center;
+        }
+
+        div.btn_wrap {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            button {
+    
+                background-color: #FCFAFB;
+                border: 0.8px solid #30341C;
+                border-radius: 50%;
+    
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 595px){
+    header {
+        margin-top: 1.25rem;
+
+        height: 15rem;
+
+        div.wrapper {
+            h2 {
+                @include Anticva-text($font-size: 0.875rem);
+            }
+
+            div.balance {
+                margin-top: 0.5rem;
+
+                img {
+                    margin-right: 0.1rem;
+                    height: 2rem;
+                    width: 1.5rem;
+                }
+
+                h1 {
+                    @include Anticva-text($font-size: 1.375rem);
+                    letter-spacing: 0.1375rem;
+                }
+            }
+
+            div.line{
+                svg {
+                    width: 11rem;
+                }
+            }
+
+            h3 {
+                @include Norms-text($font-size: 0.625rem);
+
+                margin-top: 0.3rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
+
+                max-width: 11rem;
+            }
+
+            div.btn_wrap {
+                button {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                
+                    margin-top: 0.32rem;
+        
+                    @include Norms-text($font-size: 0.5rem);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 596px){
+    header {
+        margin-top: 2.5rem;
+
+        height: 20rem;
+
+        div.wrapper {
+            h2 {
+                @include Anticva-text($font-size: 1.75rem);
+            }
+
+            div.balance {
+                margin-top: 0.5rem;
+
+                img {
+                    margin-right: 0.3rem;
+                    height: 4rem;
+                    width: 3rem;
+                }
+
+                h1 {
+                    @include Anticva-text($font-size: 2.8125rem);
+                    letter-spacing: 0.1375rem;
+                }
+            }
+
+            div.line{
+                svg {
+                    width: 21rem;
+                }
+            }
+
+            h3 {
+                @include Norms-text($font-size: 0.625rem);
+
+                margin-top: 0.6rem;
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+
+                max-width: 30rem;
+            }
+
+            div.btn_wrap {
+                button {
+                    width: 6rem;
+                    height: 6rem;
+                
+                    margin-top: 0.6rem;
+        
+                    @include Norms-text($font-size: 0.75rem);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1020px){
+    header {
+        margin-top: 3.5rem;
+
+        height: 30rem;
+
+        div.wrapper {
+            h2 {
+                @include Anticva-text($font-size: 3.125rem);
+            }
+
+            div.balance {
+                margin-top: 1rem;
+
+                img {
+                    margin-right: 1.2rem;
+                    height: 5.6rem;
+                    width: 4.5rem;
+                }
+
+                h1 {
+                    @include Anticva-text($font-size: 4.375rem);
+                    letter-spacing: 0.1375rem;
+                }
+            }
+
+            div.line{
+                svg {
+                    width: 32rem;
+                }
+            }
+
+            h3 {
+                @include Norms-text($font-size: 1.25rem);
+
+                margin-top: 0.6rem;
+                margin-left: 4rem;
+                margin-right: 4rem;
+
+                max-width: 50rem;
+            }
+
+            div.btn_wrap {
+                button {
+                    width: 9rem;
+                    height: 9rem;
+                
+                    margin-top: 1.2rem;
+        
+                    @include Norms-text($font-size: 1rem);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1600px){
+    header {
+        margin-top: 5.5rem;
+
+        height: 60rem;
+
+        div.wrapper {
+            h2 {
+                @include Anticva-text($font-size: 5rem);
+            }
+
+            div.balance {
+                margin-top: 1.5rem;
+
+                img {
+                    margin-right: 2rem;
+                    height: 9rem;
+                    width: 7rem;
+                }
+
+                h1 {
+                    @include Anticva-text($font-size: 7rem);
+                    letter-spacing: 0.7rem;
+                }
+            }
+
+            div.line{
+                svg {
+                    width: 56rem;
+                }
+            }
+
+            h3 {
+                @include Norms-text($font-size: 2rem);
+
+                margin-top: 1rem;
+
+                max-width: 80rem;
+            }
+
+            div.btn_wrap {
+                button {
+                    width: 15rem;
+                    height: 15rem;
+                
+                    margin-top: 2rem;
+        
+                    @include Norms-text($font-size: 1.6rem);
                 }
             }
         }
