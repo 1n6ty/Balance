@@ -6,6 +6,7 @@
 
 body {
   background-color: #FCFAFB;
+  width: 100%;
 }
 
 nav.top_nav {
@@ -92,7 +93,7 @@ nav.top_nav.active ul {
   nav.top_nav ul li a span {
     color: #30341C;
     font-family: Anticva, serif;
-    font-size: 0.5rem;
+    font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -166,7 +167,7 @@ nav.top_nav.active ul {
     margin-bottom: 2px;
   }
   nav.top_nav.active button.nav_btn span:first-child {
-    transform: rotate(45deg) translate(1.75px, 2px);
+    transform: rotate(45deg) translate(2.25px, 2px);
     width: 20px;
     margin: 0;
   }
@@ -174,7 +175,7 @@ nav.top_nav.active ul {
     opacity: 0;
   }
   nav.top_nav.active button.nav_btn span:last-child {
-    transform: rotate(-45deg) translate(1.75px, -2px);
+    transform: rotate(-45deg) translate(2.25px, -2px);
     width: 20px;
     margin: 0;
   }
@@ -233,7 +234,7 @@ header {
 }
 header img.bg_l {
   position: absolute;
-  left: 1.5%;
+  left: 2%;
   top: 4%;
   height: 70%;
   user-drag: none;
@@ -245,7 +246,7 @@ header img.bg_l {
 }
 header img.bg_r {
   position: absolute;
-  right: 1.5%;
+  right: 2%;
   top: 4%;
   height: 70%;
   user-drag: none;
@@ -275,8 +276,13 @@ header div.wrapper div.line {
   display: flex;
   justify-content: center;
 }
-header div.wrapper h3 {
-  opacity: 0.7;
+header div.wrapper div.h3_wrap {
+  display: flex;
+  justify-content: center;
+}
+header div.wrapper div.h3_wrap h3 {
+  display: block;
+  color: rgba(48, 52, 28, 0.7);
   text-align: center;
 }
 header div.wrapper div.btn_wrap {
@@ -290,51 +296,62 @@ header div.wrapper div.btn_wrap button {
   border-radius: 50%;
   cursor: pointer;
 }
+header div.wrapper div.mob_wrap {
+  display: none;
+}
 
 @media only screen and (max-width: 595px) {
   header {
     margin-top: 1.25rem;
-    height: 15rem;
+    height: 20rem;
+  }
+  header div.wrapper div.mob_wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.2rem;
+  }
+  header div.wrapper div.mob_wrap img {
+    height: 2rem;
+    width: 1.5rem;
   }
   header div.wrapper h2 {
     color: #30341C;
     font-family: Anticva, serif;
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
   header div.wrapper div.balance {
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
   }
   header div.wrapper div.balance img {
-    margin-right: 0.1rem;
-    height: 2rem;
-    width: 1.5rem;
+    display: none;
   }
   header div.wrapper div.balance h1 {
     color: #30341C;
     font-family: Anticva, serif;
-    font-size: 1.375rem;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: 0.1375rem;
+    letter-spacing: 0.2rem;
   }
   header div.wrapper div.line svg {
-    width: 11rem;
+    width: 13.5rem;
   }
   header div.wrapper h3 {
     color: #30341C;
     font-family: Norms, sans-serif;
-    font-size: 0.625rem;
+    font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin-top: 0.3rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    max-width: 11rem;
+    max-width: 65%;
   }
   header div.wrapper div.btn_wrap button {
     width: 3.5rem;
@@ -391,7 +408,6 @@ header div.wrapper div.btn_wrap button {
     margin-top: 0.6rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    max-width: 30rem;
   }
   header div.wrapper div.btn_wrap button {
     width: 6rem;
@@ -448,7 +464,6 @@ header div.wrapper div.btn_wrap button {
     margin-top: 0.6rem;
     margin-left: 4rem;
     margin-right: 4rem;
-    max-width: 50rem;
   }
   header div.wrapper div.btn_wrap button {
     width: 9rem;
@@ -503,7 +518,6 @@ header div.wrapper div.btn_wrap button {
     font-weight: 400;
     line-height: normal;
     margin-top: 1rem;
-    max-width: 80rem;
   }
   header div.wrapper div.btn_wrap button {
     width: 15rem;
@@ -515,6 +529,1240 @@ header div.wrapper div.btn_wrap button {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+}
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+main div.main_wrap {
+  width: 93%;
+}
+
+div.for_who {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 595px) {
+  div.for_who div.wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.for_who div.wrap p {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.5rem;
+  }
+  div.for_who img {
+    display: none;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.for_who div.wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.for_who div.wrap p {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1rem;
+  }
+  div.for_who img {
+    width: 14rem;
+    height: 10rem;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.for_who div.wrap {
+    margin-right: 1.7rem;
+  }
+  div.for_who div.wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.for_who div.wrap p {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1.25rem;
+  }
+  div.for_who img {
+    width: 25rem;
+    height: 17rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.for_who div.wrap {
+    margin-right: 3rem;
+  }
+  div.for_who div.wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.for_who div.wrap p {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 4rem;
+  }
+  div.for_who img {
+    width: 40rem;
+    height: 27rem;
+  }
+}
+div.danger {
+  width: 100%;
+}
+
+div.list_wrap {
+  box-sizing: border-box;
+  width: 100%;
+  background: #E5E0E2;
+}
+div.list_wrap ul {
+  width: 100%;
+  list-style-type: none;
+}
+div.list_wrap ul li {
+  position: relative;
+}
+div.list_wrap ul li::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: black;
+  border-radius: 50%;
+}
+
+p.add {
+  position: relative;
+}
+
+p.add::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #E1CEC5;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 595px) {
+  div.danger {
+    margin-top: 1.2rem;
+  }
+  div.danger h4 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.list_wrap {
+    width: 100%;
+    border-radius: 0.3125rem;
+    border: 0.5px solid #30341C;
+    margin-top: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.3rem 0.8rem 0.4rem 0.5rem;
+  }
+  div.list_wrap ul li {
+    padding-left: 1.5rem;
+  }
+  div.list_wrap ul li::before {
+    width: 3px;
+    height: 3px;
+    top: 0.5rem;
+    left: 0.75rem;
+  }
+  p.add {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.5rem;
+  }
+  p.add::before {
+    width: 0.75rem;
+    height: 0.75rem;
+    left: -0.5rem;
+    top: 0;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.danger {
+    margin-top: 1.2rem;
+  }
+  div.danger h4 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.list_wrap {
+    width: 100%;
+    border-radius: 0.625rem;
+    border: 0.5px solid #30341C;
+    margin-top: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.6rem 1rem 1rem 1rem;
+  }
+  div.list_wrap ul li {
+    padding-left: 1.5rem;
+  }
+  div.list_wrap ul li::before {
+    width: 3px;
+    height: 3px;
+    top: 0.5rem;
+    left: 0.75rem;
+  }
+  p.add {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1rem;
+  }
+  p.add::before {
+    width: 1.25rem;
+    height: 1.25rem;
+    left: -1rem;
+    top: 0;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.danger {
+    margin-top: 1.5rem;
+  }
+  div.danger h4 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.list_wrap {
+    width: 100%;
+    border-radius: 0.625rem;
+    border: 1px solid #30341C;
+    margin-top: 1.25rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.6rem 1rem 1rem 1rem;
+  }
+  div.list_wrap ul li {
+    padding-left: 1.5rem;
+  }
+  div.list_wrap ul li::before {
+    width: 3px;
+    height: 3px;
+    top: 0.5rem;
+    left: 0.75rem;
+  }
+  p.add {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2rem;
+  }
+  p.add::before {
+    width: 1.875rem;
+    height: 1.875rem;
+    left: -1rem;
+    top: 0;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.danger {
+    margin-top: 2.5rem;
+  }
+  div.danger h4 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.list_wrap {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1.6px solid #30341C;
+    margin-top: 2rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 1.5rem 2.5rem 1.5rem;
+  }
+  div.list_wrap ul li {
+    padding-left: 1.5rem;
+  }
+  div.list_wrap ul li::before {
+    width: 3px;
+    height: 3px;
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+  p.add {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 3.5rem;
+  }
+  p.add::before {
+    width: 3rem;
+    height: 3rem;
+    left: -1.5rem;
+    top: 0;
+  }
+}
+div.contr {
+  width: 100%;
+}
+
+@media only screen and (max-width: 595px) {
+  div.contr {
+    margin-top: 4rem;
+  }
+  div.contr h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.contr {
+    margin-top: 6rem;
+  }
+  div.contr h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.contr {
+    margin-top: 8rem;
+  }
+  div.contr h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.contr {
+    margin-top: 10rem;
+  }
+  div.contr h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+div.about {
+  width: 100%;
+  position: relative;
+}
+div.about img {
+  z-index: -1;
+  position: absolute;
+  right: 0;
+}
+div.about h2 span {
+  display: inline-block;
+  position: relative;
+}
+div.about h2 span svg {
+  position: absolute;
+}
+
+@media only screen and (max-width: 595px) {
+  div.about {
+    margin-top: 4rem;
+  }
+  div.about img {
+    width: 9rem;
+    height: 9rem;
+    top: -5%;
+  }
+  div.about h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about p {
+    margin-top: 0.6rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about div.wrap {
+    margin-top: 0.6rem;
+  }
+  div.about div.wrap div.row_wrap {
+    width: 100%;
+    display: flex;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap {
+    width: 70%;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap h3 {
+    text-align: center;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap p {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    margin-left: 0.75rem;
+  }
+  div.about div.wrap div.row_wrap:nth-child(2) {
+    justify-content: center;
+  }
+  div.about div.wrap div.row_wrap:nth-child(3) {
+    justify-content: flex-end;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.about {
+    margin-top: 6rem;
+  }
+  div.about img {
+    width: 14rem;
+    height: 14rem;
+    top: -60%;
+  }
+  div.about h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about p {
+    margin-top: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about div.wrap {
+    margin-top: 0.6rem;
+  }
+  div.about div.wrap div.row_wrap {
+    width: 100%;
+    display: flex;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap {
+    width: 70%;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap h3 {
+    text-align: center;
+    margin-bottom: 0.6rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap p {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    margin-left: 0.75rem;
+    font-size: 0.875rem;
+  }
+  div.about div.wrap div.row_wrap:nth-child(2) {
+    justify-content: center;
+  }
+  div.about div.wrap div.row_wrap:nth-child(3) {
+    justify-content: flex-end;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.about {
+    margin-top: 8rem;
+  }
+  div.about img {
+    width: 20rem;
+    height: 20rem;
+    top: -75%;
+  }
+  div.about h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about p {
+    margin-top: 2.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about div.wrap {
+    margin-top: 0.6rem;
+    display: flex;
+  }
+  div.about div.wrap div.row_wrap {
+    position: relative;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap {
+    position: absolute;
+    width: 100%;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap h3 {
+    text-align: center;
+    margin-bottom: 0.6rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap p {
+    margin-bottom: 0.6rem;
+    margin-left: 0.75rem;
+    font-size: 0.875rem;
+  }
+  div.about div.wrap div.row_wrap:nth-child(2) {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+  div.about div.wrap div.row_wrap:nth-child(2) div.list_wrap {
+    top: 3rem;
+  }
+  div.about div.wrap div.row_wrap:nth-child(3) div.list_wrap {
+    top: 9rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.about {
+    margin-top: 10rem;
+  }
+  div.about img {
+    width: 20rem;
+    height: 20rem;
+    top: -50%;
+  }
+  div.about h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about p {
+    margin-top: 2.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about div.wrap {
+    margin-top: 0.6rem;
+    display: flex;
+  }
+  div.about div.wrap div.row_wrap {
+    position: relative;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap {
+    position: absolute;
+    width: 100%;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap h3 {
+    text-align: center;
+    margin-bottom: 0.6rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.about div.wrap div.row_wrap div.list_wrap p {
+    margin-bottom: 0.6rem;
+    margin-left: 0.75rem;
+    font-size: 1.2rem;
+  }
+  div.about div.wrap div.row_wrap:nth-child(2) {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+  div.about div.wrap div.row_wrap:nth-child(2) div.list_wrap {
+    top: 3rem;
+  }
+  div.about div.wrap div.row_wrap:nth-child(3) div.list_wrap {
+    top: 9rem;
+  }
+}
+div.org {
+  width: 100%;
+}
+div.org div.wrap {
+  display: flex;
+  justify-content: space-around;
+}
+div.org div.wrap div:nth-child(1) div.img {
+  width: 100%;
+  background-size: cover;
+  background-image: url("../../img/index/1_org.png");
+}
+div.org div.wrap div:nth-child(2) div.img {
+  width: 100%;
+  background-size: cover;
+  background-image: url("../../img/index/2_org.png");
+}
+div.org div.wrap div h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+div.org div.wrap div p {
+  text-align: center;
+  opacity: 0.5;
+}
+div.org div.wrap div div.wrap_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+div.org div.wrap div div.wrap_btn a {
+  text-align: center;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 595px) {
+  div.org {
+    margin-top: 5rem;
+  }
+  div.org h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap {
+    display: block;
+    width: 100%;
+  }
+  div.org div.wrap div:nth-child(1) div.img {
+    height: 15rem;
+    box-shadow: 0 0 1rem 1rem #FCFAFB inset;
+  }
+  div.org div.wrap div:nth-child(2) div.img {
+    height: 15rem;
+    box-shadow: 0 0 1rem 1rem #FCFAFB inset;
+  }
+  div.org div.wrap div.row_wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  div.org div.wrap div {
+    width: 10rem;
+  }
+  div.org div.wrap div h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap div p {
+    margin-top: 0.3rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap div div.wrap_btn {
+    width: 100%;
+    margin-top: 0.6rem;
+  }
+  div.org div.wrap div div.wrap_btn a {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(48, 52, 28, 0.5);
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.org {
+    margin-top: 7rem;
+  }
+  div.org h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap {
+    display: block;
+    width: 100%;
+  }
+  div.org div.wrap div:nth-child(1) div.img {
+    height: 31rem;
+    box-shadow: 0 0 3rem 3rem #FCFAFB inset;
+  }
+  div.org div.wrap div:nth-child(2) div.img {
+    height: 31rem;
+    box-shadow: 0 0 3rem 3rem #FCFAFB inset;
+  }
+  div.org div.wrap div.row_wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  div.org div.wrap div {
+    width: 20.5rem;
+  }
+  div.org div.wrap div h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap div p {
+    margin-top: 0.3rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap div div.wrap_btn {
+    width: 100%;
+    margin-top: 0.6rem;
+  }
+  div.org div.wrap div div.wrap_btn a {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.6rem 2.5rem 0.6rem 2.5rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(48, 52, 28, 0.5);
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.org {
+    margin-top: 27rem;
+  }
+  div.org h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  div.org div.wrap div:nth-child(1) div.img {
+    height: 31rem;
+    box-shadow: 0 0 3rem 3rem #FCFAFB inset;
+  }
+  div.org div.wrap div:nth-child(2) div.img {
+    height: 31rem;
+    box-shadow: 0 0 3rem 3rem #FCFAFB inset;
+  }
+  div.org div.wrap div {
+    width: 20.5rem;
+  }
+  div.org div.wrap div h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap div p {
+    margin-top: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap div div.wrap_btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  div.org div.wrap div div.wrap_btn a {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.8rem 4rem 0.8rem 4rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(48, 52, 28, 0.5);
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.org {
+    margin-top: 32rem;
+  }
+  div.org h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap {
+    flex-wrap: nowrap;
+  }
+  div.org div.wrap div:nth-child(1) div.img {
+    height: 54rem;
+    box-shadow: 0 0 6rem 6rem #FCFAFB inset;
+  }
+  div.org div.wrap div:nth-child(2) div.img {
+    height: 54rem;
+    box-shadow: 0 0 6rem 6rem #FCFAFB inset;
+  }
+  div.org div.wrap div {
+    width: 36rem;
+  }
+  div.org div.wrap div h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap div p {
+    margin-top: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.org div.wrap div div.wrap_btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  div.org div.wrap div div.wrap_btn a {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 6rem 1rem 6rem;
+    border-radius: 1rem;
+    border: 1.6px solid rgba(48, 52, 28, 0.5);
+  }
+}
+div.what_need {
+  width: 100%;
+}
+div.what_need div.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+div.what_need div.wrap div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: #F0EDEE;
+}
+
+@media only screen and (max-width: 595px) {
+  div.what_need {
+    margin-top: 4rem;
+  }
+  div.what_need h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.what_need p {
+    margin-top: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.what_need div.wrap div {
+    margin-top: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    width: 17rem;
+    height: 3.75rem;
+    border-radius: 0.3rem;
+    border: 0.5px solid rgba(48, 52, 28, 0.5);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  div.what_need div.wrap div span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.what_need {
+    margin-top: 6rem;
+  }
+  div.what_need h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.what_need p {
+    margin-top: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.what_need div.wrap div {
+    margin-top: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    width: 22.5rem;
+    height: 4rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(48, 52, 28, 0.5);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  div.what_need div.wrap div span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.what_need {
+    margin-top: 8rem;
+  }
+  div.what_need h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.what_need p {
+    margin-top: 1.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.what_need div.wrap div {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    width: 22.5rem;
+    height: 5.5rem;
+    border-radius: 0.625rem;
+    border: 1.6px solid rgba(48, 52, 28, 0.5);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  div.what_need div.wrap div span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.what_need {
+    margin-top: 10rem;
+  }
+  div.what_need h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.what_need p {
+    margin-top: 1.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.what_need div.wrap div {
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 36rem;
+    height: 9rem;
+    border-radius: 0.99994rem;
+    border: 1.6px solid rgba(48, 52, 28, 0.5);
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  div.what_need div.wrap div span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+div.feedback {
+  width: 100%;
+}
+div.feedback div.h2 {
+  width: 93%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 595px) {
+  div.feedback {
+    margin-top: 4rem;
+  }
+  div.feedback div.h2 h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.feedback div.swiper {
+    margin-top: 1rem;
+  }
+  div.feedback div.swiper div.slide {
+    width: 18rem;
+    height: 9.5rem;
+    border-radius: 0.3rem;
+    border: 0.5px solid #30341C;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.feedback {
+    margin-top: 6rem;
+  }
+  div.feedback div.h2 h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.feedback div.swiper {
+    margin-top: 1rem;
+  }
+  div.feedback div.swiper div.slide {
+    width: 37.5rem;
+    height: 19rem;
+    border-radius: 0.625rem;
+    border: 1px solid #30341C;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.feedback {
+    margin-top: 8rem;
+  }
+  div.feedback div.h2 h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.feedback div.swiper {
+    margin-top: 2.5rem;
+  }
+  div.feedback div.swiper div.slide {
+    width: 43.5rem;
+    height: 22rem;
+    border-radius: 0.625rem;
+    border: 1px solid #30341C;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.feedback {
+    margin-top: 10rem;
+  }
+  div.feedback div.h2 h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.feedback div.swiper {
+    margin-top: 2.5rem;
+  }
+  div.feedback div.swiper div.slide {
+    width: 70rem;
+    height: 35rem;
+    border-radius: 1rem;
+    border: 1.6px solid #30341C;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 

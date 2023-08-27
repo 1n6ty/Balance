@@ -1,11 +1,10 @@
 @font-face {
     font-family: 'Anticva';
-    src: url('../fonts/anticva-webfont.woff') format('woff'),
-        url('../fonts/Anticva-Regular.otf') format('opentype');
+    src: url('../fonts/Anticva-Regular.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'Norms';
-    src: url('../fonts/ttnorms-webfont.woff') format('woff'),
-        url('../fonts/ttnorms.otf') format('opentype');
+    src: url('../fonts/TTNorms-Regular.woff2') format('woff2'),
+        url('../fonts/TTNorms-Regular.woff') format('woff');
 }
