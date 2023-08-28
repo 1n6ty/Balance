@@ -1482,6 +1482,7 @@ div.org div.wrap div div.wrap_btn a {
 }
 div.what_need {
   width: 100%;
+  position: relative;
 }
 div.what_need div.wrap {
   display: flex;
@@ -1495,6 +1496,24 @@ div.what_need div.wrap div {
   margin-left: auto;
   margin-right: auto;
   background: #F0EDEE;
+}
+div.what_need img.what_need_1 {
+  position: absolute;
+  z-index: -1;
+  top: -50%;
+  right: 0;
+}
+div.what_need img.what_need_2 {
+  position: absolute;
+  z-index: -1;
+  bottom: -10%;
+  left: 70%;
+}
+div.what_need img.what_need_3 {
+  position: absolute;
+  z-index: -1;
+  bottom: -10%;
+  left: 0;
 }
 
 @media only screen and (max-width: 595px) {
@@ -1537,6 +1556,19 @@ div.what_need div.wrap div {
     font-weight: 400;
     line-height: normal;
   }
+  div.what_need img.what_need_1 {
+    width: 6rem;
+    height: 7rem;
+    top: -10%;
+  }
+  div.what_need img.what_need_2 {
+    width: 2.5rem;
+    height: 3.5rem;
+  }
+  div.what_need img.what_need_3 {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
 }
 @media only screen and (min-width: 596px) {
   div.what_need {
@@ -1577,6 +1609,19 @@ div.what_need div.wrap div {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+  div.what_need img.what_need_1 {
+    height: 14rem;
+    width: 10rem;
+    top: -20%;
+  }
+  div.what_need img.what_need_2 {
+    width: 5rem;
+    height: 7rem;
+  }
+  div.what_need img.what_need_3 {
+    width: 7rem;
+    height: 7rem;
   }
 }
 @media only screen and (min-width: 1020px) {
@@ -1619,6 +1664,18 @@ div.what_need div.wrap div {
     font-weight: 400;
     line-height: normal;
   }
+  div.what_need img.what_need_1 {
+    height: 23rem;
+    width: 16rem;
+  }
+  div.what_need img.what_need_2 {
+    width: 7rem;
+    height: 9rem;
+  }
+  div.what_need img.what_need_3 {
+    width: 9rem;
+    height: 9rem;
+  }
 }
 @media only screen and (min-width: 1600px) {
   div.what_need {
@@ -1660,6 +1717,18 @@ div.what_need div.wrap div {
     font-weight: 400;
     line-height: normal;
   }
+  div.what_need img.what_need_1 {
+    height: 37rem;
+    width: 24rem;
+  }
+  div.what_need img.what_need_2 {
+    width: 11rem;
+    height: 14rem;
+  }
+  div.what_need img.what_need_3 {
+    width: 14rem;
+    height: 14rem;
+  }
 }
 div.feedback {
   width: 100%;
@@ -1667,6 +1736,26 @@ div.feedback {
 div.feedback div.h2 {
   width: 93%;
   margin: 0 auto;
+}
+div.feedback div.swiper div.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.feedback div.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+div.feedback div.btn div {
+  background-size: contain;
+  cursor: pointer;
+}
+div.feedback div.btn div.btn-prev {
+  background-color: lightgray;
+}
+div.feedback div.btn div.btn-next {
+  background-color: lightgray;
 }
 
 @media only screen and (max-width: 595px) {
@@ -1691,6 +1780,35 @@ div.feedback div.h2 {
     border: 0.5px solid #30341C;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
+    padding: 0 0.5rem;
+  }
+  div.feedback div.swiper div.slide div.wrap h4 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-weight: 700;
+  }
+  div.feedback div.swiper div.slide div.wrap p {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.feedback div.btn div {
+    margin-top: 0.6rem;
+    width: 1rem;
+    height: 1rem;
+  }
+  div.feedback div.btn div.btn-prev {
+    margin-right: 1.3rem;
+  }
+  div.feedback div.btn div.btn-next {
+    margin-left: 1.3rem;
   }
 }
 @media only screen and (min-width: 596px) {
@@ -1715,6 +1833,35 @@ div.feedback div.h2 {
     border: 1px solid #30341C;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    padding: 0 1.8rem;
+  }
+  div.feedback div.swiper div.slide div.wrap h4 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-weight: 700;
+  }
+  div.feedback div.swiper div.slide div.wrap p {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.feedback div.btn div {
+    margin-top: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  div.feedback div.btn div.btn-prev {
+    margin-right: 2.5rem;
+  }
+  div.feedback div.btn div.btn-next {
+    margin-left: 2.5rem;
   }
 }
 @media only screen and (min-width: 1020px) {
@@ -1739,6 +1886,35 @@ div.feedback div.h2 {
     border: 1px solid #30341C;
     margin-left: 0.75rem;
     margin-right: 0.75rem;
+    padding: 0 3rem;
+  }
+  div.feedback div.swiper div.slide div.wrap h4 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-weight: 700;
+  }
+  div.feedback div.swiper div.slide div.wrap p {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.feedback div.btn div {
+    margin-top: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  div.feedback div.btn div.btn-prev {
+    margin-right: 4.5rem;
+  }
+  div.feedback div.btn div.btn-next {
+    margin-left: 4.5rem;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -1763,6 +1939,879 @@ div.feedback div.h2 {
     border: 1.6px solid #30341C;
     margin-left: 1rem;
     margin-right: 1rem;
+    padding: 0 6.5rem;
+  }
+  div.feedback div.swiper div.slide div.wrap h4 {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-weight: 700;
+  }
+  div.feedback div.swiper div.slide div.wrap p {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.feedback div.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  div.feedback div.btn div {
+    margin-top: 2rem;
+    width: 5rem;
+    height: 5rem;
+    background-size: contain;
+    cursor: pointer;
+  }
+  div.feedback div.btn div.btn-prev {
+    background-color: lightgray;
+    margin-right: 7.5rem;
+  }
+  div.feedback div.btn div.btn-next {
+    background-color: lightgray;
+    margin-left: 7.5rem;
+  }
+}
+div.rates {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+div.rates div.rates-wrap {
+  width: 93%;
+}
+div.rates div.rates-wrap h2 {
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.rates div.rates-wrap div.wrap {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+div.rates div.rates-wrap div.wrap div.card:nth-child(1) div.line-wrap {
+  top: 5rem;
+}
+div.rates div.rates-wrap div.wrap div.card {
+  position: relative;
+  background: rgba(229, 224, 226, 0.5);
+}
+div.rates div.rates-wrap div.wrap div.card h3 {
+  width: 100%;
+  text-align: center;
+}
+div.rates div.rates-wrap div.wrap div.card div.line-wrap {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+div.rates div.rates-wrap div.wrap div.card ul {
+  list-style-type: none;
+}
+div.rates div.rates-wrap div.wrap div.card ul li.unact {
+  opacity: 0.5;
+}
+div.rates div.rates-wrap div.wrap div.card div.btn_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
+  background: #FCFAFB;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 595px) {
+  div.rates {
+    margin-top: 4rem;
+  }
+  div.rates div.rates-wrap {
+    width: 93%;
+  }
+  div.rates div.rates-wrap h2 {
+    text-align: center;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.rates div.rates-wrap div.wrap {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div.rates div.rates-wrap div.wrap div.card:nth-child(1) {
+    margin-top: 0;
+  }
+  div.rates div.rates-wrap div.wrap div.card:nth-child(1) div.line-wrap {
+    top: 3rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card {
+    margin-top: 1.5rem;
+    width: 20rem;
+    border-radius: 0.625rem;
+    border: 1px solid #30341C;
+  }
+  div.rates div.rates-wrap div.wrap div.card h3 {
+    margin-top: 1.5rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.rates div.rates-wrap div.wrap div.card h3.cost {
+    margin-top: 1.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.line-wrap {
+    top: 4.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.line-wrap svg {
+    margin-top: 0.5rem;
+    width: 6.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul {
+    margin-top: 2.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul li.active {
+    margin-top: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 3rem;
+    margin-right: 0.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul li.unact {
+    margin-top: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 3rem;
+    margin-right: 0.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.btn_wrap {
+    margin: 1.5rem 0;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
+    border-radius: 0.625rem;
+    border: 1px solid rgba(48, 52, 28, 0.5);
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 5rem;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.rates {
+    margin-top: 6rem;
+  }
+  div.rates div.rates-wrap {
+    width: 93%;
+  }
+  div.rates div.rates-wrap h2 {
+    text-align: center;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.rates div.rates-wrap div.wrap {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div.rates div.rates-wrap div.wrap div.card:nth-child(1) {
+    margin-top: 0;
+  }
+  div.rates div.rates-wrap div.wrap div.card:nth-child(1) div.line-wrap {
+    top: 3rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card {
+    margin-top: 1.5rem;
+    width: 22.5rem;
+    border-radius: 0.625rem;
+    border: 1px solid #30341C;
+  }
+  div.rates div.rates-wrap div.wrap div.card h3 {
+    margin-top: 1.5rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.rates div.rates-wrap div.wrap div.card h3.cost {
+    margin-top: 1.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.line-wrap {
+    top: 4.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.line-wrap svg {
+    margin-top: 0.5rem;
+    width: 6.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul {
+    margin-top: 2.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul li.active {
+    margin-top: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 3rem;
+    margin-right: 0.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul li.unact {
+    margin-top: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 3rem;
+    margin-right: 0.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.btn_wrap {
+    margin: 1.5rem 0;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
+    border-radius: 0.625rem;
+    border: 1px solid rgba(48, 52, 28, 0.5);
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 5rem;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.rates {
+    margin-top: 8rem;
+  }
+  div.rates div.rates-wrap {
+    width: 93%;
+  }
+  div.rates div.rates-wrap h2 {
+    text-align: start;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.rates div.rates-wrap div.wrap {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  div.rates div.rates-wrap div.wrap div.card:nth-child(1) {
+    margin-top: 1.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card:nth-child(1) div.line-wrap {
+    top: 3rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card {
+    width: 22.5rem;
+    border-radius: 0.625rem;
+    border: 1px solid #30341C;
+  }
+  div.rates div.rates-wrap div.wrap div.card h3 {
+    margin-top: 1.5rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.rates div.rates-wrap div.wrap div.card h3.cost {
+    margin-top: 1.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.line-wrap {
+    top: 4.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.line-wrap svg {
+    margin-top: 0.5rem;
+    width: 6.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul {
+    margin-top: 2.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul li.active {
+    margin-top: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 3rem;
+    margin-right: 0.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul li.unact {
+    margin-top: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 3rem;
+    margin-right: 0.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.btn_wrap {
+    margin: 1.5rem 0;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
+    border-radius: 0.625rem;
+    border: 1px solid rgba(48, 52, 28, 0.5);
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 5rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.rates {
+    margin-top: 10rem;
+  }
+  div.rates div.rates-wrap {
+    width: 93%;
+  }
+  div.rates div.rates-wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.rates div.rates-wrap div.wrap {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  div.rates div.rates-wrap div.wrap div.card:nth-child(1) div.line-wrap {
+    top: 5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card {
+    width: 36rem;
+    border-radius: 0.99994rem;
+    border: 1.6px solid #30341C;
+  }
+  div.rates div.rates-wrap div.wrap div.card h3 {
+    margin-top: 2.5rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.rates div.rates-wrap div.wrap div.card h3.cost {
+    margin-top: 2rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.line-wrap {
+    top: 7rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.line-wrap svg {
+    margin-top: 0.5rem;
+    width: 10rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul {
+    margin-top: 2.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul li.active {
+    margin-top: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 3.5rem;
+    margin-right: 0.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card ul li.unact {
+    margin-top: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 3.5rem;
+    margin-right: 0.5rem;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.btn_wrap {
+    margin: 2rem 0;
+  }
+  div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
+    border-radius: 0.99994rem;
+    border: 1.6px solid rgba(48, 52, 28, 0.5);
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 9rem;
+  }
+}
+div.quest {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+div.quest div.quest_wrap {
+  width: 93%;
+}
+div.quest div.quest_wrap h2 {
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 2.5rem;
+}
+div.quest div.quest_wrap div.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.1rem solid #30341C;
+}
+div.quest div.quest_wrap div.top img {
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+div.quest div.quest_wrap div.answ {
+  overflow: hidden;
+  max-height: 0;
+  border-bottom: 0.1rem solid #30341C;
+  transition: max-height 0.5s ease;
+}
+div.quest div.quest_wrap div.answ span {
+  opacity: 0.8;
+}
+div.quest div.quest_wrap div.q.active div.answ {
+  max-height: 20vh;
+}
+div.quest div.quest_wrap div.q.active div.top img {
+  transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 595px) {
+  div.quest {
+    margin-top: 4rem;
+  }
+  div.quest div.quest_wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1rem;
+  }
+  div.quest div.quest_wrap div.top span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.quest div.quest_wrap div.top img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  div.quest div.quest_wrap div.answ span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.quest div.quest_wrap div.answ div.row {
+    height: 0.5rem;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.quest {
+    margin-top: 6rem;
+  }
+  div.quest div.quest_wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1rem;
+  }
+  div.quest div.quest_wrap div.top span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.quest div.quest_wrap div.top img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  div.quest div.quest_wrap div.answ span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.quest div.quest_wrap div.answ div.row {
+    height: 1rem;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  div.quest {
+    margin-top: 8rem;
+  }
+  div.quest div.quest_wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2.5rem;
+  }
+  div.quest div.quest_wrap div.top span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.quest div.quest_wrap div.top img {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  div.quest div.quest_wrap div.answ span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.quest div.quest_wrap div.answ div.row {
+    height: 1rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  div.quest {
+    margin-top: 10rem;
+  }
+  div.quest div.quest_wrap h2 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2.5rem;
+  }
+  div.quest div.quest_wrap div.top span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.quest div.quest_wrap div.top img {
+    width: 5rem;
+    height: 5rem;
+  }
+  div.quest div.quest_wrap div.answ span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.quest div.quest_wrap div.answ div.row {
+    height: 2rem;
+  }
+}
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+footer div.wrap {
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+footer div.wrap div {
+  max-width: 33%;
+}
+footer div.wrap div * {
+  display: block;
+}
+footer div.wrap div a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 595px) {
+  footer {
+    margin-top: 4rem;
+  }
+  footer div.wrap {
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+  }
+  footer div.wrap div {
+    padding-bottom: 1rem;
+    max-width: 80%;
+  }
+  footer div.wrap div * {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  footer div.wrap div a {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap div a.mail {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap div span {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap img {
+    width: 8rem;
+    height: 10rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  footer div.wrap h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1rem;
+  }
+  footer div.wrap span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 596px) {
+  footer {
+    margin-top: 6rem;
+  }
+  footer div.wrap {
+    margin-bottom: 4rem;
+  }
+  footer div.wrap div {
+    padding-bottom: 3rem;
+  }
+  footer div.wrap div * {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  footer div.wrap div a {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap div a.mail {
+    margin-bottom: 1.5rem;
+  }
+  footer div.wrap div span {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap img {
+    width: 11rem;
+    height: 14rem;
+  }
+  footer div.wrap h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2.5rem;
+  }
+  footer div.wrap span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  footer {
+    margin-top: 8rem;
+  }
+  footer div.wrap {
+    margin-bottom: 4rem;
+  }
+  footer div.wrap div {
+    padding-bottom: 3rem;
+  }
+  footer div.wrap div * {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  footer div.wrap div a {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap div a.mail {
+    margin-bottom: 1.5rem;
+  }
+  footer div.wrap div span {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap img {
+    width: 12rem;
+    height: 15rem;
+  }
+  footer div.wrap h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2.5rem;
+  }
+  footer div.wrap span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  footer {
+    margin-top: 10rem;
+  }
+  footer div.wrap {
+    margin-bottom: 6rem;
+  }
+  footer div.wrap div {
+    padding-bottom: 4rem;
+  }
+  footer div.wrap div * {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  footer div.wrap div a {
+    margin-bottom: 1rem;
+  }
+  footer div.wrap div a.mail {
+    margin-bottom: 2rem;
+  }
+  footer div.wrap div span {
+    margin-bottom: 1rem;
+  }
+  footer div.wrap img {
+    width: 20rem;
+    height: 25rem;
+  }
+  footer div.wrap h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 4rem;
+  }
+  footer div.wrap span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 }
 
