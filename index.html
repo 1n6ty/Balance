@@ -14,27 +14,27 @@
         <nav class="top_nav">
             <ul>
                 <li>
-                    <a>
+                    <a id="about_btn">
                         <span>о марафоне</span>
                     </a>
                 </li>
                 <li>
-                    <a>
+                    <a id="rates_btn">
                         <span>тарифы</span>
                     </a>
                 </li>
                 <li>
-                    <a>
+                    <a id="quest_btn">
                         <span>вопросы</span>
                     </a>
                 </li>
                 <li>
-                    <a>
+                    <a id="sug_btn">
                         <span>ваши предложения</span>
                     </a>
                 </li>
                 <li>
-                    <a href="mailto:marafonfitobalance@gmail.com">
+                    <a href="mailto:marafonfitobalance@gmail.com" id="email_btn">
                         <span>marafonfitobalance@gmail.com</span>
                     </a>
                 </li>
@@ -68,7 +68,7 @@
                     <h3>Фундамент здоровья человека - здоровый желудочно-кишечный тракт и микробиота</h3>
                 </div>
                 <div class="btn_wrap">
-                    <button>Участвовать<br/>в марафоне</button>
+                    <button id="take_part_btn">Участвовать<br/>в марафоне</button>
                 </div>
             </div>
             <img src="./img/index/header_r.png" class="bg_r"/>
@@ -118,7 +118,7 @@
                     <p class="add">Беременность и грудное вскармливание</p>
                 </div>
 
-                <div class="about">
+                <div class="about" id="about">
                     <img src="./img/index/about.png"/>
                     <h2>О Марафоне фитосанации 
                         <span>
@@ -298,11 +298,13 @@
             </div>
         </div>
 
-        <div class="rates">
+        <div class="rates" id="rates">
+            <img src="./img/index/rates_1.png" class="rates_1"/>
+            <img src="./img/index/rates_2.png" class="rates_2"/>
             <div class="rates-wrap">
                 <h2>ТАРИФЫ</h2>
                 <div class="wrap">
-                    <div class="card">
+                    <div class="card" data-rate-id="0" data-rate-cost="1.200" data-rate-name="Я сама">
                         <h3>Я сама</h3>
                         <div class="line-wrap">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 23" fill="none">
@@ -331,7 +333,7 @@
                             <button class="choose">Выбрать этот тариф</button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-rate-id="1" data-rate-cost="5.900" data-rate-name="Вместе веселее">
                         <h3>Вместе веселее</h3>
                         <div class="line-wrap">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 23" fill="none">
@@ -360,7 +362,7 @@
                             <button class="choose">Выбрать этот тариф</button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-rate-id="2" data-rate-cost="20.000" data-rate-name="Максимальный результат">
                         <h3>Максимальный результат</h3>
                         <div class="line-wrap">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 23" fill="none">
@@ -393,7 +395,7 @@
             </div>
         </div>
 
-        <div class="quest">
+        <div class="quest" id="quest">
             <div class="quest_wrap">
                 <h2>Часто задаваемые вопросы</h2>
                 <div class="q active">
@@ -534,6 +536,58 @@
                 </div>
             </div>
         </footer>
+
+        <div class="suggestions">
+            <div class="wrap">
+                <div class="close">
+                    <img src="./img/index/cross.png"/>
+                </div>
+                <div class="row">
+                    <div class="img">
+                        <img src="./img/index/suggest.png" />
+                    </div>
+                    <h3>напишите о своем предложении нам, и мы дадим обратную связь</h3>
+                    <form>
+                        <input type="text" name="name" placeholder="Ваше имя"/>
+                        <input type="email" name="email" placeholder="Ваш email"/>
+                        <input type="tel" name="tel" placeholder="Ваш номер"/>
+                        <textarea name="text"></textarea>
+                        <button type="submit">отправить</button>
+                    </form>
+                    <span>Все права защищены в соответсвии с <a href="#">политикой конфиденциальности</a></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart">
+            <div class="wrap">
+                <div class="row">
+                    <div class="close">
+                        <img src="./img/index/cross.png"/>
+                    </div>
+                    <div class="rate">
+                        <div class="choose">
+                            <pre>Тариф: </pre>
+                            <h3></h3>
+                        </div>
+                        <div class="cost">
+                            <span class="cost"></span>
+                            <img src="./img/index/plus.png"/>
+                        </div>
+                    </div>
+                    <form>
+                        <input type="text" placeholder="ФИО" name="name"/>
+                        <input type="email" placeholder="Ваш email" name="email"/>
+                        <input type="tel" placeholder="Ваш номер" name="phone"/>
+                        <input hidden type="number" name="id" value=""/>
+                        <span>Итоговая сумма</span>
+                        <span class="sum"></span>
+                        <button type="submit">Подтвердить заказ</button>
+                    </form>
+                    <span>Нажимая на кнопку, вы соглашаетесь на обработку своих персональных данных в соответствии с <a href="#">договором оферты</a> и <a href="#">политикой конфиденциальности</a></span>
+                </div>
+            </div>
+        </div>
 
         <script src="./js/jquery-3.7.0.min.js"></script>
         <script src="./js/slick.min.js"></script>

@@ -7,6 +7,7 @@
 body {
   background-color: #FCFAFB;
   width: 100%;
+  overflow-y: scroll;
 }
 
 nav.top_nav {
@@ -1752,10 +1753,10 @@ div.feedback div.btn div {
   cursor: pointer;
 }
 div.feedback div.btn div.btn-prev {
-  background-color: lightgray;
+  background-image: url(../../img/index/back.png);
 }
 div.feedback div.btn div.btn-next {
-  background-color: lightgray;
+  background-image: url(../../img/index/next.png);
 }
 
 @media only screen and (max-width: 595px) {
@@ -1971,11 +1972,9 @@ div.feedback div.btn div.btn-next {
     cursor: pointer;
   }
   div.feedback div.btn div.btn-prev {
-    background-color: lightgray;
     margin-right: 7.5rem;
   }
   div.feedback div.btn div.btn-next {
-    background-color: lightgray;
     margin-left: 7.5rem;
   }
 }
@@ -1983,6 +1982,19 @@ div.rates {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+}
+div.rates img.rates_1 {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+div.rates img.rates_2 {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 div.rates div.rates-wrap {
   width: 93%;
@@ -2020,6 +2032,21 @@ div.rates div.rates-wrap div.wrap div.card div.line-wrap {
 div.rates div.rates-wrap div.wrap div.card ul {
   list-style-type: none;
 }
+div.rates div.rates-wrap div.wrap div.card ul li {
+  position: relative;
+}
+div.rates div.rates-wrap div.wrap div.card ul li::before {
+  content: "";
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+div.rates div.rates-wrap div.wrap div.card ul li.active::before {
+  background-image: url("../../img/index/accept.png");
+}
+div.rates div.rates-wrap div.wrap div.card ul li.unact::before {
+  background-image: url("../../img/index/cross.png");
+}
 div.rates div.rates-wrap div.wrap div.card ul li.unact {
   opacity: 0.5;
 }
@@ -2036,6 +2063,10 @@ div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
 @media only screen and (max-width: 595px) {
   div.rates {
     margin-top: 4rem;
+  }
+  div.rates img {
+    width: 4rem;
+    height: 7rem;
   }
   div.rates div.rates-wrap {
     width: 93%;
@@ -2100,6 +2131,12 @@ div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
     margin-left: 3rem;
     margin-right: 0.5rem;
   }
+  div.rates div.rates-wrap div.wrap div.card ul li::before {
+    left: -2rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 0.75rem;
+  }
   div.rates div.rates-wrap div.wrap div.card ul li.unact {
     margin-top: 0.5rem;
     color: #30341C;
@@ -2129,6 +2166,10 @@ div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
 @media only screen and (min-width: 596px) {
   div.rates {
     margin-top: 6rem;
+  }
+  div.rates img {
+    width: 8rem;
+    height: 14rem;
   }
   div.rates div.rates-wrap {
     width: 93%;
@@ -2193,6 +2234,12 @@ div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
     margin-left: 3rem;
     margin-right: 0.5rem;
   }
+  div.rates div.rates-wrap div.wrap div.card ul li::before {
+    left: -2rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 0.75rem;
+  }
   div.rates div.rates-wrap div.wrap div.card ul li.unact {
     margin-top: 0.5rem;
     color: #30341C;
@@ -2222,6 +2269,10 @@ div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
 @media only screen and (min-width: 1020px) {
   div.rates {
     margin-top: 8rem;
+  }
+  div.rates img {
+    width: 13rem;
+    height: 22rem;
   }
   div.rates div.rates-wrap {
     width: 93%;
@@ -2285,6 +2336,12 @@ div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
     margin-left: 3rem;
     margin-right: 0.5rem;
   }
+  div.rates div.rates-wrap div.wrap div.card ul li::before {
+    left: -2rem;
+    top: 0.5rem;
+    width: 1.25rem;
+    height: 1rem;
+  }
   div.rates div.rates-wrap div.wrap div.card ul li.unact {
     margin-top: 0.5rem;
     color: #30341C;
@@ -2314,6 +2371,10 @@ div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
 @media only screen and (min-width: 1600px) {
   div.rates {
     margin-top: 10rem;
+  }
+  div.rates img {
+    width: 17rem;
+    height: 35rem;
   }
   div.rates div.rates-wrap {
     width: 93%;
@@ -2372,6 +2433,12 @@ div.rates div.rates-wrap div.wrap div.card div.btn_wrap button {
     margin-left: 3.5rem;
     margin-right: 0.5rem;
   }
+  div.rates div.rates-wrap div.wrap div.card ul li::before {
+    left: -2.5rem;
+    top: 1rem;
+    width: 2rem;
+    height: 1.5rem;
+  }
   div.rates div.rates-wrap div.wrap div.card ul li.unact {
     margin-top: 1rem;
     color: #30341C;
@@ -2406,6 +2473,7 @@ div.quest {
 }
 div.quest div.quest_wrap {
   width: 93%;
+  border-bottom: 0.1rem solid #30341C;
 }
 div.quest div.quest_wrap h2 {
   color: #30341C;
@@ -2430,7 +2498,6 @@ div.quest div.quest_wrap div.top img {
 div.quest div.quest_wrap div.answ {
   overflow: hidden;
   max-height: 0;
-  border-bottom: 0.1rem solid #30341C;
   transition: max-height 0.5s ease;
 }
 div.quest div.quest_wrap div.answ span {
@@ -2604,12 +2671,14 @@ footer div.wrap {
 }
 footer div.wrap div {
   max-width: 33%;
+  min-width: 33%;
 }
 footer div.wrap div * {
   display: block;
 }
 footer div.wrap div a {
   text-decoration: none;
+  text-align: end;
 }
 
 @media only screen and (max-width: 595px) {
@@ -2635,6 +2704,7 @@ footer div.wrap div a {
   }
   footer div.wrap div a {
     margin-bottom: 0.6rem;
+    text-align: start;
   }
   footer div.wrap div a.mail {
     margin-bottom: 0.6rem;
@@ -2812,6 +2882,545 @@ footer div.wrap div a {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+}
+div.suggestions.active {
+  display: flex;
+  opacity: 1;
+}
+
+div.suggestions {
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(139, 116, 105, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+div.suggestions div.wrap {
+  width: 34rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.625rem;
+  background-color: #FCFAFB;
+  position: relative;
+}
+div.suggestions div.wrap div.close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  cursor: pointer;
+}
+div.suggestions div.wrap div.row {
+  width: 93%;
+}
+div.suggestions div.wrap div.row div.img {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+div.suggestions div.wrap div.row h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.suggestions div.wrap div.row form {
+  width: 100%;
+}
+div.suggestions div.wrap div.row form input {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid #30341C;
+  margin-bottom: 1rem;
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1rem 1.25rem;
+}
+div.suggestions div.wrap div.row form textarea {
+  max-width: 100%;
+  min-width: 100%;
+  height: 5.625rem;
+  border-radius: 0.625rem;
+  border: 1px solid #30341C;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+  resize: none;
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.suggestions div.wrap div.row form button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.625rem;
+  border: none;
+  background: #8B7469;
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: white;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+div.suggestions div.wrap div.row span {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: block;
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+div.suggestions div.wrap div.row span a {
+  color: black;
+}
+
+@media only screen and (max-width: 595px) {
+  div.suggestions div.wrap {
+    width: 14rem;
+    border-radius: 0.325rem;
+  }
+  div.suggestions div.wrap div.close {
+    top: 0.15rem;
+    right: 0.25rem;
+  }
+  div.suggestions div.wrap div.close img {
+    width: 1rem;
+    height: 0.8rem;
+  }
+  div.suggestions div.wrap div.row {
+    width: 93%;
+  }
+  div.suggestions div.wrap div.row div.img {
+    margin-top: 0.8rem;
+  }
+  div.suggestions div.wrap div.row div.img img {
+    height: 6rem;
+    width: 8rem;
+  }
+  div.suggestions div.wrap div.row h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.suggestions div.wrap div.row form input {
+    border-radius: 0.325rem;
+    margin-bottom: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.5rem 0.5rem;
+  }
+  div.suggestions div.wrap div.row form textarea {
+    max-width: 100%;
+    min-width: 100%;
+    height: 2.825rem;
+    border-radius: 0.325rem;
+    border: 1px solid #30341C;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.suggestions div.wrap div.row form button {
+    border-radius: 0.325rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: white;
+    padding: 0.35rem 0;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  div.suggestions div.wrap div.row span {
+    margin-bottom: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+div.cart.active {
+  display: flex;
+  opacity: 1;
+}
+
+div.cart {
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(139, 116, 105, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+div.cart div.wrap {
+  width: 34rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.625rem;
+  background-color: #FCFAFB;
+  position: relative;
+}
+div.cart div.wrap div.close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  cursor: pointer;
+}
+div.cart div.wrap div.row {
+  width: 93%;
+}
+div.cart div.wrap div.row div.rate {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.06rem solid rgba(48, 52, 28, 0.2);
+  border-bottom: 0.06rem solid rgba(48, 52, 28, 0.2);
+  margin-top: 4rem;
+  padding: 1.25rem 0;
+}
+div.cart div.wrap div.row div.rate div {
+  display: flex;
+  align-items: center;
+  max-width: 50%;
+}
+div.cart div.wrap div.row div.rate div pre {
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+div.cart div.wrap div.row div.rate div h3 {
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  margin-left: 0.5rem;
+}
+div.cart div.wrap div.row div.rate div span {
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+div.cart div.wrap div.row div.rate div img {
+  transform: rotate(45deg);
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+div.cart div.wrap div.row form {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+div.cart div.wrap div.row form input {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid #30341C;
+  margin-bottom: 1rem;
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1rem 1.25rem;
+}
+div.cart div.wrap div.row form span {
+  margin-bottom: 0;
+  text-align: end;
+  opacity: 1;
+  font-weight: 500;
+}
+div.cart div.wrap div.row form button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.625rem;
+  border: none;
+  background: #8B7469;
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: white;
+  padding: 0.75rem 0;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+div.cart div.wrap div.row span {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: block;
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+div.cart div.wrap div.row span a {
+  color: black;
+}
+
+@media only screen and (max-width: 595px) {
+  div.cart div.wrap {
+    width: 17rem;
+    border-radius: 0.325rem;
+  }
+  div.cart div.wrap div.close {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  div.cart div.wrap div.close img {
+    width: 1rem;
+    height: 0.8rem;
+  }
+  div.cart div.wrap div.row {
+    width: 93%;
+  }
+  div.cart div.wrap div.row div.rate {
+    margin-top: 2.5rem;
+    padding: 0.5rem 0;
+  }
+  div.cart div.wrap div.row div.rate div pre {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.cart div.wrap div.row div.rate div h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 0.2rem;
+  }
+  div.cart div.wrap div.row div.rate div span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 0.2rem;
+    margin-bottom: 0;
+  }
+  div.cart div.wrap div.row div.rate div img {
+    width: 1rem;
+    height: 1rem;
+  }
+  div.cart div.wrap div.row form {
+    margin-top: 1rem;
+  }
+  div.cart div.wrap div.row form input {
+    border-radius: 0.625rem;
+    border: 1px solid #30341C;
+    margin-bottom: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.5rem 0.5rem;
+  }
+  div.cart div.wrap div.row form span {
+    margin-bottom: 0;
+  }
+  div.cart div.wrap div.row form button {
+    border-radius: 0.625rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.3rem 0;
+    margin: 0.5rem 0;
+    color: white;
+  }
+  div.cart div.wrap div.row span {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+  }
+  div.cart div.wrap div.row span a {
+    color: black;
+  }
+}
+@media only screen and (min-width: 596px) {
+  div.cart div.wrap {
+    width: 34rem;
+    border-radius: 0.625rem;
+  }
+  div.cart div.wrap div.close {
+    top: 1rem;
+    right: 1rem;
+  }
+  div.cart div.wrap div.close img {
+    width: 2.3rem;
+    height: 2rem;
+  }
+  div.cart div.wrap div.row {
+    width: 93%;
+  }
+  div.cart div.wrap div.row div.rate {
+    margin-top: 4rem;
+    padding: 1rem 0;
+  }
+  div.cart div.wrap div.row div.rate div pre {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.cart div.wrap div.row div.rate div h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 0.4rem;
+  }
+  div.cart div.wrap div.row div.rate div span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 0.4rem;
+    margin-bottom: 0;
+  }
+  div.cart div.wrap div.row div.rate div img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  div.cart div.wrap div.row form {
+    margin-top: 1.5rem;
+  }
+  div.cart div.wrap div.row form input {
+    border-radius: 0.625rem;
+    border: 1px solid #30341C;
+    margin-bottom: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 1.25rem;
+  }
+  div.cart div.wrap div.row form span {
+    margin-bottom: 0;
+  }
+  div.cart div.wrap div.row form button {
+    border-radius: 0.625rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.6rem 0;
+    margin: 1rem 0;
+    color: white;
+  }
+  div.cart div.wrap div.row span {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+  }
+  div.cart div.wrap div.row span a {
+    color: black;
   }
 }
 

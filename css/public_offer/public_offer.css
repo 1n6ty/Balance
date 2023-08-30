@@ -1,0 +1,864 @@
+@import url("../base.css");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FCFAFB;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+nav.top_nav {
+  z-index: 10;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background: #DDD6D2;
+  transition: height 1s ease-in-out;
+  overflow: hidden;
+}
+nav.top_nav ul {
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  overflow: hidden;
+}
+nav.top_nav ul li {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  height: 100%;
+}
+nav.top_nav ul li a {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px;
+  padding-top: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+nav.top_nav ul li a span {
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+nav.top_nav button.nav_btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+nav.top_nav button.nav_btn div span {
+  display: block;
+  transition: all 0.5s ease;
+  background-color: #8B7469;
+}
+
+nav.top_nav.active {
+  height: 100%;
+}
+nav.top_nav.active ul {
+  top: 50%;
+}
+
+@media only screen and (max-width: 595px) {
+  nav.top_nav {
+    height: 1.25rem;
+  }
+  nav.top_nav ul {
+    position: absolute;
+    transition: top 1s ease-in-out;
+    top: -10rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    height: 10rem;
+  }
+  nav.top_nav ul li {
+    height: 2rem;
+  }
+  nav.top_nav ul li a span {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  nav.top_nav button.nav_btn {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.25rem;
+    margin-top: 0.13rem;
+  }
+  nav.top_nav button.nav_btn div span {
+    width: 5px;
+    height: 1px;
+    opacity: 1;
+    transform-origin: bottom;
+  }
+  nav.top_nav button.nav_btn div span:nth-child(1),
+  nav.top_nav button.nav_btn div span:nth-child(2) {
+    margin-bottom: 1px;
+  }
+  nav.top_nav.active button.nav_btn span:first-child {
+    transform: rotate(45deg) translate(1px, 1px);
+    width: 10px;
+    margin: 0;
+  }
+  nav.top_nav.active button.nav_btn span:nth-child(2) {
+    opacity: 0;
+  }
+  nav.top_nav.active button.nav_btn span:last-child {
+    transform: rotate(-45deg) translate(1px, -1px);
+    width: 10px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 596px) {
+  nav.top_nav {
+    height: 2.5rem;
+  }
+  nav.top_nav ul {
+    position: absolute;
+    transition: top 1s ease-in-out;
+    top: -17.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    height: 17.5rem;
+  }
+  nav.top_nav ul li {
+    height: 3.5rem;
+  }
+  nav.top_nav ul li a span {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  nav.top_nav button.nav_btn {
+    height: 1.875rem;
+    width: 1.875rem;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+  }
+  nav.top_nav button.nav_btn div span {
+    width: 8px;
+    height: 2px;
+  }
+  nav.top_nav button.nav_btn div span:nth-child(1),
+  nav.top_nav button.nav_btn div span:nth-child(2) {
+    margin-bottom: 2px;
+  }
+  nav.top_nav.active button.nav_btn span:first-child {
+    transform: rotate(45deg) translate(2.25px, 2px);
+    width: 20px;
+    margin: 0;
+  }
+  nav.top_nav.active button.nav_btn span:nth-child(2) {
+    opacity: 0;
+  }
+  nav.top_nav.active button.nav_btn span:last-child {
+    transform: rotate(-45deg) translate(2.25px, -2px);
+    width: 20px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  nav.top_nav {
+    height: 3.5rem;
+    transition: none;
+  }
+  nav.top_nav ul {
+    display: flex;
+    top: 0;
+    left: 0;
+    transform: none;
+    transition: none;
+    height: 100%;
+  }
+  nav.top_nav ul li {
+    height: 100%;
+  }
+  nav.top_nav ul li a span {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  nav.top_nav button.nav_btn {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  nav.top_nav {
+    height: 5.5rem;
+  }
+  nav.top_nav ul {
+    display: flex;
+  }
+  nav.top_nav ul li a span {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+footer div.wrap {
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+footer div.wrap div {
+  max-width: 33%;
+  min-width: 33%;
+}
+footer div.wrap div * {
+  display: block;
+}
+footer div.wrap div a {
+  text-decoration: none;
+  text-align: end;
+}
+
+@media only screen and (max-width: 595px) {
+  footer {
+    margin-top: 4rem;
+  }
+  footer div.wrap {
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+  }
+  footer div.wrap div {
+    padding-bottom: 1rem;
+    max-width: 80%;
+  }
+  footer div.wrap div * {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  footer div.wrap div a {
+    margin-bottom: 0.6rem;
+    text-align: start;
+  }
+  footer div.wrap div a.mail {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap div span {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap img {
+    width: 8rem;
+    height: 10rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  footer div.wrap h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1rem;
+  }
+  footer div.wrap span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 596px) {
+  footer {
+    margin-top: 6rem;
+  }
+  footer div.wrap {
+    margin-bottom: 4rem;
+  }
+  footer div.wrap div {
+    padding-bottom: 3rem;
+  }
+  footer div.wrap div * {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  footer div.wrap div a {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap div a.mail {
+    margin-bottom: 1.5rem;
+  }
+  footer div.wrap div span {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap img {
+    width: 11rem;
+    height: 14rem;
+  }
+  footer div.wrap h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2.5rem;
+  }
+  footer div.wrap span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  footer {
+    margin-top: 8rem;
+  }
+  footer div.wrap {
+    margin-bottom: 4rem;
+  }
+  footer div.wrap div {
+    padding-bottom: 3rem;
+  }
+  footer div.wrap div * {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  footer div.wrap div a {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap div a.mail {
+    margin-bottom: 1.5rem;
+  }
+  footer div.wrap div span {
+    margin-bottom: 0.6rem;
+  }
+  footer div.wrap img {
+    width: 12rem;
+    height: 15rem;
+  }
+  footer div.wrap h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2.5rem;
+  }
+  footer div.wrap span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  footer {
+    margin-top: 10rem;
+  }
+  footer div.wrap {
+    margin-bottom: 6rem;
+  }
+  footer div.wrap div {
+    padding-bottom: 4rem;
+  }
+  footer div.wrap div * {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  footer div.wrap div a {
+    margin-bottom: 1rem;
+  }
+  footer div.wrap div a.mail {
+    margin-bottom: 2rem;
+  }
+  footer div.wrap div span {
+    margin-bottom: 1rem;
+  }
+  footer div.wrap img {
+    width: 20rem;
+    height: 25rem;
+  }
+  footer div.wrap h3 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 4rem;
+  }
+  footer div.wrap span {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+div.suggestions.active {
+  display: flex;
+  opacity: 1;
+}
+
+div.suggestions {
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(139, 116, 105, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+div.suggestions div.wrap {
+  width: 34rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.625rem;
+  background-color: #FCFAFB;
+  position: relative;
+}
+div.suggestions div.wrap div.close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  cursor: pointer;
+}
+div.suggestions div.wrap div.row {
+  width: 93%;
+}
+div.suggestions div.wrap div.row div.img {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+div.suggestions div.wrap div.row h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.suggestions div.wrap div.row form {
+  width: 100%;
+}
+div.suggestions div.wrap div.row form input {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid #30341C;
+  margin-bottom: 1rem;
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1rem 1.25rem;
+}
+div.suggestions div.wrap div.row form textarea {
+  max-width: 100%;
+  min-width: 100%;
+  height: 5.625rem;
+  border-radius: 0.625rem;
+  border: 1px solid #30341C;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+  resize: none;
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.suggestions div.wrap div.row form button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.625rem;
+  border: none;
+  background: #8B7469;
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: white;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+div.suggestions div.wrap div.row span {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: block;
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+div.suggestions div.wrap div.row span a {
+  color: black;
+}
+
+@media only screen and (max-width: 595px) {
+  div.suggestions div.wrap {
+    width: 14rem;
+    border-radius: 0.325rem;
+  }
+  div.suggestions div.wrap div.close {
+    top: 0.15rem;
+    right: 0.25rem;
+  }
+  div.suggestions div.wrap div.close img {
+    width: 1rem;
+    height: 0.8rem;
+  }
+  div.suggestions div.wrap div.row {
+    width: 93%;
+  }
+  div.suggestions div.wrap div.row div.img {
+    margin-top: 0.8rem;
+  }
+  div.suggestions div.wrap div.row div.img img {
+    height: 6rem;
+    width: 8rem;
+  }
+  div.suggestions div.wrap div.row h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.suggestions div.wrap div.row form input {
+    border-radius: 0.325rem;
+    margin-bottom: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.5rem 0.5rem;
+  }
+  div.suggestions div.wrap div.row form textarea {
+    max-width: 100%;
+    min-width: 100%;
+    height: 2.825rem;
+    border-radius: 0.325rem;
+    border: 1px solid #30341C;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  div.suggestions div.wrap div.row form button {
+    border-radius: 0.325rem;
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: white;
+    padding: 0.35rem 0;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  div.suggestions div.wrap div.row span {
+    margin-bottom: 0.5rem;
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.475rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main div.wrap {
+  width: 93%;
+  margin-top: 11.5rem;
+}
+main div.wrap h1 {
+  color: #30341C;
+  font-family: Anticva, serif;
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 6rem;
+}
+main div.wrap p, main div.wrap li {
+  color: #30341C;
+  font-family: Norms, sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+main div.wrap p a, main div.wrap li a {
+  color: #EE341B;
+  text-decoration: none;
+}
+main div.wrap ul {
+  list-style-type: none;
+}
+main div.wrap ul li {
+  margin-left: 1rem;
+  position: relative;
+}
+main div.wrap ul li::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: black;
+  border-radius: 50%;
+  width: 3px;
+  height: 3px;
+  top: 0.95rem;
+  left: -0.75rem;
+}
+main div.wrap ul.dash li::before {
+  content: "-";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: -0.75rem;
+}
+
+@media only screen and (max-width: 595px) {
+  main div.wrap {
+    margin-top: 3rem;
+  }
+  main div.wrap h1 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1.5rem;
+  }
+  main div.wrap p, main div.wrap li {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  main div.wrap ul li {
+    margin-left: 1rem;
+  }
+  main div.wrap ul li::before {
+    width: 3px;
+    height: 3px;
+    top: 0.5rem;
+    left: -0.75rem;
+  }
+  main div.wrap ul.dash li::before {
+    width: 0;
+    height: 0;
+    top: 0;
+    left: -0.75rem;
+  }
+}
+@media only screen and (min-width: 596px) {
+  main div.wrap {
+    margin-top: 5.5rem;
+  }
+  main div.wrap h1 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2rem;
+  }
+  main div.wrap p, main div.wrap li {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  main div.wrap ul li {
+    margin-left: 1rem;
+  }
+  main div.wrap ul li::before {
+    width: 3px;
+    height: 3px;
+    top: 0.5rem;
+    left: -0.75rem;
+  }
+  main div.wrap ul.dash li::before {
+    width: 0;
+    height: 0;
+    top: 0;
+    left: -0.75rem;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  main div.wrap {
+    margin-top: 7.25rem;
+  }
+  main div.wrap h1 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 3.75rem;
+  }
+  main div.wrap p, main div.wrap li {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  main div.wrap ul li {
+    margin-left: 1rem;
+  }
+  main div.wrap ul li::before {
+    width: 3px;
+    height: 3px;
+    top: 0.5rem;
+    left: -0.75rem;
+  }
+  main div.wrap ul.dash li::before {
+    width: 0;
+    height: 0;
+    top: 0;
+    left: -0.75rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  main div.wrap {
+    margin-top: 11.5rem;
+  }
+  main div.wrap h1 {
+    color: #30341C;
+    font-family: Anticva, serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 6rem;
+  }
+  main div.wrap p, main div.wrap li {
+    color: #30341C;
+    font-family: Norms, sans-serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  main div.wrap ul li {
+    margin-left: 1rem;
+  }
+  main div.wrap ul li::before {
+    width: 3px;
+    height: 3px;
+    top: 0.95rem;
+    left: -0.75rem;
+  }
+  main div.wrap ul.dash li::before {
+    width: 0;
+    height: 0;
+    top: 0;
+    left: -0.75rem;
+  }
+}
+
+/*# sourceMappingURL=public_offer.css.map */
