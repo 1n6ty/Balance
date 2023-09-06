@@ -130,7 +130,7 @@ $(document).ready(function(){
         $('.cart .rate .choose h3').html(rate_name);
         $('.cart .rate .cost span').html(rate_cost + ' рублей');
         $('.cart form .sum').html(rate_cost + ' рублей');
-        $(`.cart form input[name="id"]`).value = rate_id;
+        $('#id_rate').attr('value', rate_id);
 
         $('.cart').addClass('active');
         $('.cart').css({

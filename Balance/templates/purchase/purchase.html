@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Balance</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+
+        <link rel="stylesheet" href="{% static 'css/purchase/purchase.css' %}"/>
+    </head>
+    <body>
+        <div class="suggestions">
+            <div class="wrap">
+                <div class="row">
+                    <div class="img">
+                        <img src="{% static 'img/index/suggest.png' %}" />
+                    </div>
+                    <h3 class="positive {% if success %} active {% endif %}">ПОЗДРАВЛЯЕМ! ПОКУПКА ПРОГРАММЫ “”БАЛАНС” ПРОШЛА УСПЕШНО!</h3>
+                    <h3 class="negative {% if not success %} active {% endif %}">ИЗВИНИТЕ, ЧТО-ТО ПОШЛО НЕ ТАК! ПОЖАЛУЙСТА, ПОВТОРИТЕ ПОПЫТКУ</h3>
+                    <span class="positive {% if success %} active {% endif %}">
+                        В ближайшее время Вы получите письмо на указанную почту, в котором будет содержаться ссылка на чат участников программы со всей дальнейшей информацией
+                    </span>
+                    <span class="active">По вопросам: <a class="mail" href="mailto:marafonfitobalance@gmail.com">marafonfitobalance@gmail.com</a></span>
+                    <a class="btn" href="{% url 'index' %}">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

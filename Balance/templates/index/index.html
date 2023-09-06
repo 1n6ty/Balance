@@ -1,13 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head lang="ru">
         <title>Balance</title>
+        <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
 
-        <link rel="stylesheet" href="./css/slick.css"/>
-        <link rel="stylesheet" href="./css/index/index.css"/>
+        <link rel="stylesheet" href="{% static 'css/slick.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/index/index.css' %}"/>
     </head>
     <body>
         <!--Top navigation bar-->
@@ -49,14 +52,14 @@
         </nav>
 
         <header>
-            <img src="./img/index/header_l.png" class="bg_l"/>
+            <img src="{% static 'img/index/header_l.png' %}" class="bg_l"/>
             <div class="wrapper">
                 <div class="mob_wrap">
-                    <img alt="balance 3.0" src="./img/index/balance.png"/>
+                    <img alt="balance 3.0" src="{% static 'img/index/balance.png' %}"/>
                 </div>
                 <h2>Марафон фитосанации</h2>
                 <div class="balance">
-                    <img alt="balance 3.0" src="./img/index/balance.png"/>
+                    <img alt="balance 3.0" src="{% static 'img/index/balance.png' %}"/>
                     <h1>Баланс 3.0</h1>
                 </div>
                 <div class="line">
@@ -71,7 +74,7 @@
                     <button id="take_part_btn">Участвовать<br/>в марафоне</button>
                 </div>
             </div>
-            <img src="./img/index/header_r.png" class="bg_r"/>
+            <img src="{% static 'img/index/header_r.png' %}" class="bg_r"/>
         </header>
 
         <main>
@@ -81,7 +84,7 @@
                         <h2>ДЛЯ КОГО МАРАФОН?</h2>
                         <p>Большинство людей имеют признаки нарушения состава и функции микробиоты, обусловленные неправильным питанием, избытком простых углеводов, бесконтрольным применением антибиотиков и высоким уровнем стресса</p>
                     </div>
-                    <img src="./img/index/for_who.png"/>
+                    <img src="{% static 'img/index/for_who.png' %}"/>
                 </div>
     
                 <div class="danger">
@@ -119,7 +122,7 @@
                 </div>
 
                 <div class="about" id="about">
-                    <img src="./img/index/about.png"/>
+                    <img src="{% static 'img/index/about.png' %}"/>
                     <h2>О Марафоне фитосанации 
                         <span>
                             <h2>Баланс 3.0</h2>
@@ -174,7 +177,7 @@
                                 <h3>александрова елена евгеньевна</h3>
                                 <p>Врач акушер-гинеколог, специалист интегральной и привентивной медицины</p>
                                 <div class="wrap_btn">
-                                    <a href="#">Узнать подробнее о враче</a>
+                                    <a href="https://домвитаминов.рф/balans" target="_blank">Узнать подробнее о враче</a>
                                 </div>
                             </div>
                         </div>
@@ -184,7 +187,7 @@
                                 <h3>кашурникова надежда александровна</h3>
                                 <p>Врач акушер-гинеколог, специалист интегральной и привентивной медицины</p>
                                 <div class="wrap_btn">
-                                    <a href="#">Узнать подробнее о враче</a>
+                                    <a href="https://домвитаминов.рф/balans/#rec630832088" target="_blank">Узнать подробнее о враче</a>
                                 </div>
                             </div>
                         </div>
@@ -208,9 +211,9 @@
                             <span>Покупка нутрицевтиков для прохождения фитосанации в течение 3 месяцев (их стоимость составит 10.000-11.000 рублей)</span>
                         </div>
                     </div>
-                    <img src="./img/index/what_need_1.png" class="what_need_1"/>
-                    <img src="./img/index/what_need_2.png" class="what_need_2"/>
-                    <img src="./img/index/what_need_3.png" class="what_need_3"/>
+                    <img src="{% static 'img/index/what_need_1.png' %}" class="what_need_1"/>
+                    <img src="{% static 'img/index/what_need_2.png' %}" class="what_need_2"/>
+                    <img src="{% static 'img/index/what_need_3.png' %}" class="what_need_3"/>
                 </div>
             </div>
         </main>
@@ -299,98 +302,36 @@
         </div>
 
         <div class="rates" id="rates">
-            <img src="./img/index/rates_1.png" class="rates_1"/>
-            <img src="./img/index/rates_2.png" class="rates_2"/>
+            <img src="{% static 'img/index/rates_1.png' %}" class="rates_1"/>
+            <img src="{% static 'img/index/rates_2.png' %}" class="rates_2"/>
             <div class="rates-wrap">
                 <h2>ТАРИФЫ</h2>
                 <div class="wrap">
-                    <div class="card" data-rate-id="0" data-rate-cost="1.200" data-rate-name="Я сама">
-                        <h3>Я сама</h3>
-                        <div class="line-wrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 23" fill="none">
-                                <path opacity="0.5" d="M1.57715 21.9414C24.0426 11.4592 42.8809 -0.485404 71.4328 1.32669C86.6632 2.29332 102.118 10.2137 115.046 15.3544C134.535 23.1035 156.88 16.6367 169.563 5.47402" stroke="#4E4F4A" stroke-width="1.59987" stroke-linecap="round"/>
-                            </svg>
+                    {% for rate in rates %}
+                        <div class="card" data-rate-id="{{ rate.0 }}" data-rate-cost="{{ rate.1 }}" data-rate-name="{{ rate.2 }}">
+                            <h3>{{ rate.2 }}</h3>
+                            <div class="line-wrap">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 23" fill="none">
+                                    <path opacity="0.5" d="M1.57715 21.9414C24.0426 11.4592 42.8809 -0.485404 71.4328 1.32669C86.6632 2.29332 102.118 10.2137 115.046 15.3544C134.535 23.1035 156.88 16.6367 169.563 5.47402" stroke="#4E4F4A" stroke-width="1.59987" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <ul>
+                                {% for el in rate.3 %}
+                                    {% if el.1 == 'A' %}
+                                        <li class="active">{{ el.0 }}</li>
+                                    {% elif el.1 == 'U' %}
+                                        <li class="unact">{{ el.0 }}</li>
+                                    {% else %}
+                                        <li class="active" style="visibility: hidden;">{{ el.0 }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <h3 class="cost">{{ rate.1 }} рублей</h3>
+                            <div class="btn_wrap">
+                                <button class="choose">Выбрать этот тариф</button>
+                            </div>
                         </div>
-                        <ul>
-                            <li class="active">Самостоятельное соблюдение диеты без программы нутрицевтиков</li>
-                            <li class="active">Эффективный протокол питания с готовым меню и рецептами на 6 недель</li>
-                            <li class="active">Комплекс упражнений для поддержки детоксикации</li>
-                            <li class="unact">Прямой эфир с врачами превентивной медицины Кашурниковой Надеждой Александровной и Александровой Еленой Евгеньевной с подробным описанием всех этапов программы с точки зрения физиологии и интегративного подхода</li>
-                            <li class="unact">2 месяца бережного восстановления микрофлоры с помощью натуральных растительных экстрактов, горечей и пробиотиков</li>
-                            <li class="unact">Закрытый чат в телеграм с ежедневной поддержкой и ответами на вопросы с сопровождением превентивного врача Шевченко Ирины Сергеевны</li>
-                            <li class="unact">Список необходимых нутрицевтиков, схема их приема, удобная организованная закупка и доставка</li>
-                            <li class="unact">Подробная информация по действию каждого нутрицевтика</li>
-                            <li class="unact">Скидка 10% на приобретение программы нутрицевтиков по специальному промокоду</li>
-                            <li class="unact">Обучающие видео для лучшего понимания работы системы детоксикации, лимфатической системы</li>
-                            <li class="unact">Заполнение опросника, анализ всех предыдущих результатов анализов и обследований </li>
-                            <li class="unact">Составление необходимого списка анализов с учетом основного запроса и жалоб</li>
-                            <li class="unact">Две видео-консультации с превентивным врачом (на ваш выбор) в начале  и в конце программы</li>
-                            <li class="unact">Индивидуально подобранная программа фитосанации с учетом опросника и анализов </li>
-                            <li class="unact">Составление программы восполнения дефицита витаминов и минералов с учетом анализов и основного запроса.</li>
-                        </ul>
-                        <h3 class="cost">1.200 рублей</h3>
-                        <div class="btn_wrap">
-                            <button class="choose">Выбрать этот тариф</button>
-                        </div>
-                    </div>
-                    <div class="card" data-rate-id="1" data-rate-cost="5.900" data-rate-name="Вместе веселее">
-                        <h3>Вместе веселее</h3>
-                        <div class="line-wrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 23" fill="none">
-                                <path opacity="0.5" d="M1.57715 21.9414C24.0426 11.4592 42.8809 -0.485404 71.4328 1.32669C86.6632 2.29332 102.118 10.2137 115.046 15.3544C134.535 23.1035 156.88 16.6367 169.563 5.47402" stroke="#4E4F4A" stroke-width="1.59987" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <ul>
-                            <li class="active" style="visibility: hidden;">Самостоятельное соблюдение диеты без программы нутрицевтиков</li>
-                            <li class="active">Эффективный протокол питания с готовым меню и рецептами на 6 недель</li>
-                            <li class="active">Комплекс упражнений для поддержки детоксикации</li>
-                            <li class="active">Прямой эфир с врачами превентивной медицины Кашурниковой Надеждой Александровной и Александровой Еленой Евгеньевной с подробным описанием всех этапов программы с точки зрения физиологии и интегративного подхода</li>
-                            <li class="active">2 месяца бережного восстановления микрофлоры с помощью натуральных растительных экстрактов, горечей и пробиотиков</li>
-                            <li class="active">Закрытый чат в телеграм с ежедневной поддержкой и ответами на вопросы с сопровождением превентивного врача Шевченко Ирины Сергеевны</li>
-                            <li class="active">Список необходимых нутрицевтиков, схема их приема, удобная организованная закупка и доставка</li>
-                            <li class="active">Подробная информация по действию каждого нутрицевтика</li>
-                            <li class="active">Скидка 10% на приобретение программы нутрицевтиков по специальному промокоду</li>
-                            <li class="active">Обучающие видео для лучшего понимания работы системы детоксикации, лимфатической системы</li>
-                            <li class="unact">Заполнение опросника, анализ всех предыдущих результатов анализов и обследований </li>
-                            <li class="unact">Составление необходимого списка анализов с учетом основного запроса и жалоб</li>
-                            <li class="unact">Две видео-консультации с превентивным врачом (на ваш выбор) в начале  и в конце программы</li>
-                            <li class="unact">Индивидуально подобранная программа фитосанации с учетом опросника и анализов </li>
-                            <li class="unact">Составление программы восполнения дефицита витаминов и минералов с учетом анализов и основного запроса.</li>
-                        </ul>
-                        <h3 class="cost">5.900 рублей</h3>
-                        <div class="btn_wrap">
-                            <button class="choose">Выбрать этот тариф</button>
-                        </div>
-                    </div>
-                    <div class="card" data-rate-id="2" data-rate-cost="20.000" data-rate-name="Максимальный результат">
-                        <h3>Максимальный результат</h3>
-                        <div class="line-wrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 23" fill="none">
-                                <path opacity="0.5" d="M1.57715 21.9414C24.0426 11.4592 42.8809 -0.485404 71.4328 1.32669C86.6632 2.29332 102.118 10.2137 115.046 15.3544C134.535 23.1035 156.88 16.6367 169.563 5.47402" stroke="#4E4F4A" stroke-width="1.59987" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <ul>
-                            <li class="active" style="visibility: hidden;">Самостоятельное соблюдение диеты без программы нутрицевтиков</li>
-                            <li class="active">Эффективный протокол питания с готовым меню и рецептами на 6 недель</li>
-                            <li class="active">Комплекс упражнений для поддержки детоксикации</li>
-                            <li class="active">Прямой эфир с врачами превентивной медицины Кашурниковой Надеждой Александровной и Александровой Еленой Евгеньевной с подробным описанием всех этапов программы с точки зрения физиологии и интегративного подхода</li>
-                            <li class="active">2 месяца бережного восстановления микрофлоры с помощью натуральных растительных экстрактов, горечей и пробиотиков</li>
-                            <li class="active">Закрытый чат в телеграм с ежедневной поддержкой и ответами на вопросы с сопровождением превентивного врача Шевченко Ирины Сергеевны</li>
-                            <li class="active">Список необходимых нутрицевтиков, схема их приема, удобная организованная закупка и доставка</li>
-                            <li class="active">Подробная информация по действию каждого нутрицевтика</li>
-                            <li class="active">Скидка 10% на приобретение программы нутрицевтиков по специальному промокоду</li>
-                            <li class="active">Обучающие видео для лучшего понимания работы системы детоксикации, лимфатической системы</li>
-                            <li class="active">Заполнение опросника, анализ всех предыдущих результатов анализов и обследований </li>
-                            <li class="active">Составление необходимого списка анализов с учетом основного запроса и жалоб</li>
-                            <li class="active">Две видео-консультации с превентивным врачом (на ваш выбор) в начале  и в конце программы</li>
-                            <li class="active">Индивидуально подобранная программа фитосанации с учетом опросника и анализов </li>
-                            <li class="active">Составление программы восполнения дефицита витаминов и минералов с учетом анализов и основного запроса.</li>
-                        </ul>
-                        <h3 class="cost">20.000 рублей</h3>
-                        <div class="btn_wrap">
-                            <button class="choose">Выбрать этот тариф</button>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -401,7 +342,7 @@
                 <div class="q active">
                     <div class="top">
                         <span>Зачем сдавать анализы для прохождения марафона?</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>Проанализировав необходимые обследования, мы сможем убедиться, что у вас нет противопоказаний к прохождению марафона. Ваше здоровье - наш приоритет! Обратите внимание - индивидуальная интерпретация анализов не входит в стоимость марафона!</span>
@@ -411,7 +352,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Сначала оплата или анализы? Вдруг анализы покажут противопоказания?</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>Вы оплачиваете стоимость участия в марафоне и сдаете анализы. Если по анализам будут выявлены противопоказания, то мы вернем вам оплату.</span>
@@ -421,7 +362,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Могу ли я участвовать в марафоне, если я из другого города/страны?</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>Да, конечно! На марафоне организована доставка всех необходимых компонентов программы по России и странам таможенного союза. Если вы из Европы/США/Австралии, то мы для вас составим индивидуальную программу с нутрицевтиками, которые можно купить в вашей стране.</span>
@@ -431,7 +372,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Мне удобнее разбить оплату за нутрицевтики на части. Есть ли на марафоне рассрочка?</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>Да, для удобства наших участников, оплата закупки нутрицевтиков может быть в рассрочку через сервис Робокасса.</span>
@@ -441,7 +382,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Сколько всего затрат уйдет на марафон?</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>Cтоимость участия в марафоне (5900 рублей/20000 рублей + анализы (примерно 5000 рублей) + нутрицевтики 10000-11000 рублей (+ доставка 250-600 рублей)</span>
@@ -451,7 +392,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Сколько по времени идет программа марафона?</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>Программа марафона состоит из 3-х этапов и длится в течение 2-х месяцев.</span>
@@ -461,7 +402,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Сколько длится сопровождение превентивного врача в чате телеграм?</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>2 месяца.</span>
@@ -471,7 +412,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Я боюсь, что я не справлюсь с диетой</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>На марафоне мы сделали всё для того, чтобы этого не случилось. Вам будут предложены рецепты блюд из разрешенных продуктов, с которыми вы не будете чувствовать бремя диеты. Также вы получите ответы на свои вопросы и поддержку от сообщества единомышленников.</span>
@@ -481,7 +422,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Сколько времени в неделю мне нужно уделять марафону?</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>тюбаж - 40 минут - 1 раз в неделю<br>ванна с английской солью - 30 минут - 1-2 раза в неделю<br>тренировка - 30 минут - 2 раза в неделю<br>прямой эфир - 1 час - в начале и конце марафона<br>изучить материалы по компонентам программы - 30 минут<br>изучить диету и меню - 1 час</span>
@@ -491,7 +432,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Что за тренировки на марафоне? Я плохо физически подготовлена.</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>Тренировки на марафоне направлены на работу с лимфой и расслабление, поэтому вам не о чем волноваться! Правильную технику выполнения будет показывать фитнес-тренер, специалист технологии здорового фитнеса.</span>
@@ -501,7 +442,7 @@
                 <div class="q">
                     <div class="top">
                         <span>Я хочу участвовать с мужем/подругой</span>
-                        <img src="./img/index/plus.png" />
+                        <img src="{% static 'img/index/plus.png' %}" />
                     </div>
                     <div class="answ">
                         <span>Если вы планируете проходить марафон вдвоем , то стоимость марафона будет 11000 рублей за двоих (ваша экономия составит 800 рублей), нутрицевтическую поддержку, каждый покупает индивидуально, а также, каждому участнику необходимо будет сдать анализы для выявления возможных противопоказаний</span>
@@ -528,11 +469,11 @@
                         e-mail: prokopyevaee@gmail.com
                     </span>
                 </div>
-                <img src="./img/index/balance.png" />
+                <img src="{% static 'img/index/balance.png' %}" />
                 <div>
                     <a class="mail" href="mailto:marafonfitobalance@gmail.com">marafonfitobalance@gmail.com</a>
-                    <a href="#">Политика конфиденциальности</a>
-                    <a href="#">Политика оферты</a>
+                    <a href="{% url 'privacy_policy' %}" target="_blank">Политика конфиденциальности</a>
+                    <a href="{% url 'public_offer' %}" target="_blank">Политика оферты</a>
                 </div>
             </div>
         </footer>
@@ -540,21 +481,22 @@
         <div class="suggestions">
             <div class="wrap">
                 <div class="close">
-                    <img src="./img/index/cross.png"/>
+                    <img src="{% static 'img/index/cross.png' %}"/>
                 </div>
                 <div class="row">
                     <div class="img">
-                        <img src="./img/index/suggest.png" />
+                        <img src="{% static 'img/index/suggest.png' %}" />
                     </div>
                     <h3>напишите о своем предложении нам, и мы дадим обратную связь</h3>
-                    <form>
-                        <input type="text" name="name" placeholder="Ваше имя"/>
-                        <input type="email" name="email" placeholder="Ваш email"/>
-                        <input type="tel" name="tel" placeholder="Ваш номер"/>
-                        <textarea name="text"></textarea>
+                    <form method="post" action="/suggestions/">
+                        {% csrf_token %}
+                        <input type="text" name="name" placeholder="Ваше имя" required/>
+                        <input type="email" name="email" placeholder="Ваш email" required/>
+                        <input type="tel" name="tel" placeholder="Ваш номер" required pattern="^\+?[0-9]{9,14}$"/>
+                        <textarea name="text" required></textarea>
                         <button type="submit">отправить</button>
                     </form>
-                    <span>Все права защищены в соответсвии с <a href="#">политикой конфиденциальности</a></span>
+                    <span>Все права защищены в соответсвии с <a href="{% url 'privacy_policy' %}" target="_blank">политикой конфиденциальности</a></span>
                 </div>
             </div>
         </div>
@@ -563,7 +505,7 @@
             <div class="wrap">
                 <div class="row">
                     <div class="close">
-                        <img src="./img/index/cross.png"/>
+                        <img src="{% static 'img/index/cross.png' %}"/>
                     </div>
                     <div class="rate">
                         <div class="choose">
@@ -572,25 +514,26 @@
                         </div>
                         <div class="cost">
                             <span class="cost"></span>
-                            <img src="./img/index/plus.png"/>
+                            <img src="{% static 'img/index/plus.png' %}"/>
                         </div>
                     </div>
-                    <form>
-                        <input type="text" placeholder="ФИО" name="name"/>
-                        <input type="email" placeholder="Ваш email" name="email"/>
-                        <input type="tel" placeholder="Ваш номер" name="phone"/>
-                        <input hidden type="number" name="id" value=""/>
+                    <form method="POST" action="/buy/">
+                        {% csrf_token %}
+                        <input type="text" name="name" placeholder="Ваше имя" required/>
+                        <input type="email" name="email" placeholder="Ваш email" required/>
+                        <input type="tel" name="tel" placeholder="Ваш номер" required pattern="^\+?[0-9]{9,14}$"/>
+                        <input hidden type="number" name="id_rate" id="id_rate" value=""/>
                         <span>Итоговая сумма</span>
                         <span class="sum"></span>
                         <button type="submit">Подтвердить заказ</button>
                     </form>
-                    <span>Нажимая на кнопку, вы соглашаетесь на обработку своих персональных данных в соответствии с <a href="#">договором оферты</a> и <a href="#">политикой конфиденциальности</a></span>
+                    <span>Нажимая на кнопку, вы соглашаетесь на обработку своих персональных данных в соответствии с <a href="{% url 'public_offer' %}" target="_blank">договором оферты</a> и <a href="{% url 'privacy_policy' %}" target="_blank">политикой конфиденциальности</a></span>
                 </div>
             </div>
         </div>
 
-        <script src="./js/jquery-3.7.0.min.js"></script>
-        <script src="./js/slick.min.js"></script>
-        <script src="./js/index/index.js"></script>
+        <script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+        <script src="{% static 'js/slick.min.js' %}"></script>
+        <script src="{% static 'js/index/index.js' %}"></script>
     </body>
 </html>
